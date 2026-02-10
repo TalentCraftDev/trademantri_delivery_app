@@ -10,12 +10,12 @@ class KeicyDropDownFormField extends FormField<dynamic> {
     @required double? height,
     @required List<dynamic>? menuItems,
     Function(dynamic)? onChangeHandler,
-    bool isDense: true,
-    bool isDisabled: false,
-    bool isExpanded: true,
+    bool isDense = true,
+    bool isDisabled = false,
+    bool isExpanded = true,
     dynamic value,
-    bool autovalidate: false,
-    bool updateValueNewly: false,
+    bool autovalidate = false,
+    bool updateValueNewly = false,
     FormFieldValidator<dynamic>? onValidateHandler,
     Function(dynamic)? onSaveHandler,
 
@@ -55,7 +55,7 @@ class KeicyDropDownFormField extends FormField<dynamic> {
   }) : super(
           key: key,
           initialValue: value,
-          autovalidate: autovalidate,
+          autovalidateMode: autovalidate ? AutovalidateMode.always : AutovalidateMode.disabled,
           validator: (value) {
             isDoneValidate = true;
             if (onValidateHandler != null) return onValidateHandler(value);

@@ -20,11 +20,13 @@ class BlockButtonWidget extends StatelessWidget {
         ],
         borderRadius: BorderRadius.all(Radius.circular(100)),
       ),
-      child: FlatButton(
+      child: TextButton(
+        style: TextButton.styleFrom(
+          backgroundColor: this.color,
+          padding: EdgeInsets.symmetric(horizontal: 66, vertical: 14),
+          shape: StadiumBorder(),
+        ),
         onPressed: this.onPressed,
-        padding: EdgeInsets.symmetric(horizontal: 66, vertical: 14),
-        color: this.color,
-        shape: StadiumBorder(),
         child: this.text!,
       ),
     );

@@ -82,7 +82,7 @@ class _IntroViewState extends State<IntroView> with SingleTickerProviderStateMix
               KeicyRaisedButton(
                 width: widthDp * 150,
                 height: heightDp * 30,
-                color: config.Colors().mainColor(1),
+                color: config.AppColors().mainColor(1),
                 borderRadius: heightDp * 6,
                 child: Text(
                   IntroPageString.login,
@@ -100,7 +100,7 @@ class _IntroViewState extends State<IntroView> with SingleTickerProviderStateMix
               KeicyRaisedButton(
                 width: widthDp * 150,
                 height: heightDp * 30,
-                color: config.Colors().mainColor(1),
+                color: config.AppColors().mainColor(1),
                 borderRadius: heightDp * 6,
                 child: Text(
                   IntroPageString.register,

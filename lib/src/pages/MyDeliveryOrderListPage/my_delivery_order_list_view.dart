@@ -243,7 +243,7 @@ class _MyDeliveryOrderListViewState extends State<MyDeliveryOrderListView> with 
         Expanded(
           child: NotificationListener<OverscrollIndicatorNotification>(
             onNotification: (notification) {
-              notification.disallowGlow();
+              notification.disallowIndicator();
               return true;
             },
             child: SmartRefresher(

@@ -21,16 +21,16 @@ class ChangePasswordDialog {
       return new InputDecoration(
         hintText: hintText,
         labelText: labelText,
-        hintStyle: Theme.of(context).textTheme.bodyText2!.merge(
-              TextStyle(color: Theme.of(context).focusColor),
+        hintStyle: Theme.of(context).textTheme.bodyMedium!.merge(
+              TextStyle(color: Theme.of(context).colorScheme.primary),
             ),
         errorMaxLines: 2,
-        enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).hintColor.withOpacity(0.3))),
-        focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).hintColor.withOpacity(0.8))),
-        errorBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).errorColor.withOpacity(0.3))),
-        focusedErrorBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).errorColor.withOpacity(0.8))),
-        labelStyle: Theme.of(context).textTheme.bodyText2!.merge(
-              TextStyle(color: Theme.of(context).hintColor),
+        enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.onSurfaceVariant.withOpacity(0.3))),
+        focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.onSurfaceVariant.withOpacity(0.8))),
+        errorBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.error.withOpacity(0.3))),
+        focusedErrorBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.error.withOpacity(0.8))),
+        labelStyle: Theme.of(context).textTheme.bodyMedium!.merge(
+              TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant),
             ),
         contentPadding: EdgeInsets.symmetric(horizontal: widthDp * 10, vertical: heightDp * 0),
       );
@@ -59,7 +59,7 @@ class ChangePasswordDialog {
               SizedBox(width: heightDp * 10),
               Text(
                 'Change Password',
-                style: Theme.of(context).textTheme.bodyText1,
+                style: Theme.of(context).textTheme.bodyLarge,
               )
             ],
           ),
@@ -71,7 +71,7 @@ class ChangePasswordDialog {
                   new TextFormField(
                     controller: _oldPasswordController,
                     focusNode: _oldPasswordFocusNode,
-                    style: TextStyle(color: Theme.of(context).hintColor),
+                    style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant),
                     keyboardType: TextInputType.text,
                     decoration: getInputDecoration(labelText: 'Old Password'),
                     obscureText: true,
@@ -85,7 +85,7 @@ class ChangePasswordDialog {
                   new TextFormField(
                     controller: _newPasswordController,
                     focusNode: _newPasswordFocusNode,
-                    style: TextStyle(color: Theme.of(context).hintColor),
+                    style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant),
                     keyboardType: TextInputType.text,
                     obscureText: true,
                     decoration: getInputDecoration(hintText: '', labelText: 'New Password'),
@@ -102,7 +102,7 @@ class ChangePasswordDialog {
                   new TextFormField(
                     controller: _confirmPasswordController,
                     focusNode: _confirmPasswordFocusNode,
-                    style: TextStyle(color: Theme.of(context).hintColor),
+                    style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant),
                     keyboardType: TextInputType.text,
                     obscureText: true,
                     decoration: getInputDecoration(hintText: '', labelText: 'Confirm Password'),
@@ -131,7 +131,7 @@ class ChangePasswordDialog {
                   onPressed: _submit,
                   child: Text(
                     'Save',
-                    style: TextStyle(color: Theme.of(context).accentColor),
+                    style: TextStyle(color: Theme.of(context).colorScheme.secondary),
                   ),
                 ),
               ],

@@ -56,7 +56,7 @@ class PickupCompletedButtonsPanel extends StatelessWidget {
               height: heightDp * 35,
               borderRadius: heightDp * 8,
               padding: EdgeInsets.symmetric(horizontal: widthDp * 5),
-              color: config.Colors().mainColor(1),
+              color: config.AppColors().mainColor(1),
               child: Text(
                 "Navigate",
                 style: TextStyle(fontSize: fontSp * 14, color: Colors.white),
@@ -82,7 +82,7 @@ class PickupCompletedButtonsPanel extends StatelessWidget {
               height: heightDp * 35,
               borderRadius: heightDp * 8,
               padding: EdgeInsets.symmetric(horizontal: widthDp * 5),
-              color: config.Colors().mainColor(1),
+              color: config.AppColors().mainColor(1),
               child: Text(
                 "Chat with user",
                 style: TextStyle(fontSize: fontSp * 14, color: Colors.white),
@@ -104,7 +104,7 @@ class PickupCompletedButtonsPanel extends StatelessWidget {
               height: heightDp * 35,
               borderRadius: heightDp * 8,
               padding: EdgeInsets.symmetric(horizontal: widthDp * 5),
-              color: config.Colors().mainColor(1),
+              color: config.AppColors().mainColor(1),
               child: Text(
                 "Delivery Done",
                 style: TextStyle(fontSize: fontSp * 14, color: Colors.white),

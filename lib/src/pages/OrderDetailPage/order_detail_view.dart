@@ -140,7 +140,7 @@ class _OrderDetailViewState extends State<OrderDetailView> {
   Widget _mainPanel() {
     return NotificationListener<OverscrollIndicatorNotification>(
       onNotification: (notification) {
-        notification.disallowGlow();
+        notification.disallowIndicator();
         return true;
       },
       child: SingleChildScrollView(
@@ -498,7 +498,7 @@ class _OrderDetailViewState extends State<OrderDetailView> {
     return KeicyRaisedButton(
       width: widthDp * 140,
       height: heightDp * 35,
-      color: config.Colors().mainColor(1),
+      color: config.AppColors().mainColor(1),
       borderRadius: heightDp * 35,
       child: Text("Accept", style: TextStyle(fontSize: fontSp * 14, color: Colors.white)),
       onPressed: () {
@@ -537,7 +537,7 @@ class _OrderDetailViewState extends State<OrderDetailView> {
           KeicyRaisedButton(
             width: widthDp * 150,
             height: heightDp * 35,
-            color: config.Colors().mainColor(1),
+            color: config.AppColors().mainColor(1),
             borderRadius: heightDp * 35,
             padding: EdgeInsets.symmetric(horizontal: widthDp * 5),
             child: Text("Navigate to Store", style: TextStyle(fontSize: fontSp * 14, color: Colors.white)),
@@ -559,7 +559,7 @@ class _OrderDetailViewState extends State<OrderDetailView> {
           KeicyRaisedButton(
             width: widthDp * 150,
             height: heightDp * 35,
-            color: config.Colors().mainColor(1),
+            color: config.AppColors().mainColor(1),
             borderRadius: heightDp * 35,
             padding: EdgeInsets.symmetric(horizontal: widthDp * 5),
             child: Text("Pickup Items", style: TextStyle(fontSize: fontSp * 14, color: Colors.white)),
@@ -573,7 +573,7 @@ class _OrderDetailViewState extends State<OrderDetailView> {
           KeicyRaisedButton(
             width: widthDp * 150,
             height: heightDp * 35,
-            color: config.Colors().mainColor(1),
+            color: config.AppColors().mainColor(1),
             borderRadius: heightDp * 35,
             padding: EdgeInsets.symmetric(horizontal: widthDp * 5),
             child: Text("Cancel", style: TextStyle(fontSize: fontSp * 14, color: Colors.white)),
@@ -600,7 +600,7 @@ class _OrderDetailViewState extends State<OrderDetailView> {
           KeicyRaisedButton(
             width: widthDp * 150,
             height: heightDp * 35,
-            color: pickupAvailable ? config.Colors().mainColor(1) : Colors.grey.withOpacity(0.6),
+            color: pickupAvailable ? config.AppColors().mainColor(1) : Colors.grey.withOpacity(0.6),
             borderRadius: heightDp * 35,
             padding: EdgeInsets.symmetric(horizontal: widthDp * 5),
             child: Text("Confirm Pickup", style: TextStyle(fontSize: fontSp * 14, color: pickupAvailable ? Colors.white : Colors.black)),
@@ -618,7 +618,7 @@ class _OrderDetailViewState extends State<OrderDetailView> {
           KeicyRaisedButton(
             width: widthDp * 150,
             height: heightDp * 35,
-            color: config.Colors().mainColor(1),
+            color: config.AppColors().mainColor(1),
             borderRadius: heightDp * 35,
             padding: EdgeInsets.symmetric(horizontal: widthDp * 5),
             child: Text("Cancel", style: TextStyle(fontSize: fontSp * 14, color: Colors.white)),

@@ -89,9 +89,9 @@ class _SplashPageState extends State<SplashPage> {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              config.Colors().mainColor(1).withOpacity(0.7),
-              config.Colors().mainColor(1),
-              config.Colors().mainColor(1).withOpacity(0.7),
+              config.AppColors().mainColor(1).withOpacity(0.7),
+              config.AppColors().mainColor(1),
+              config.AppColors().mainColor(1).withOpacity(0.7),
             ],
             begin: Alignment.bottomCenter,
             end: Alignment.topCenter,

@@ -227,7 +227,7 @@ class _OrderListViewState extends State<OrderListView> with SingleTickerProvider
         Expanded(
           child: NotificationListener<OverscrollIndicatorNotification>(
             onNotification: (notification) {
-              notification.disallowGlow();
+              notification.disallowIndicator();
               return true;
             },
             child: SmartRefresher(

@@ -162,7 +162,7 @@ class _OTPPageState extends State<OTPPage> {
                   child: Container(
                     width: deviceWidth,
                     height: heightDp1 * 250,
-                    decoration: BoxDecoration(color: Theme.of(context).accentColor),
+                    decoration: BoxDecoration(color: Theme.of(context).colorScheme.secondary),
                   ),
                 ),
                 Positioned(
@@ -175,7 +175,7 @@ class _OTPPageState extends State<OTPPage> {
                       SizedBox(height: heightDp1 * 20),
                       Text(
                         "Email Verification OTP",
-                        style: Theme.of(context).textTheme.headline2!.merge(TextStyle(color: Theme.of(context).primaryColor)),
+                        style: Theme.of(context).textTheme.headlineMedium!.merge(TextStyle(color: Theme.of(context).colorScheme.primary)),
                       ),
                       SizedBox(height: heightDp1 * 20),
                       Container(
@@ -183,9 +183,9 @@ class _OTPPageState extends State<OTPPage> {
                         margin: EdgeInsets.symmetric(horizontal: widthDp * 20),
                         padding: EdgeInsets.symmetric(vertical: heightDp1 * 30, horizontal: widthDp * 10),
                         decoration: BoxDecoration(
-                          color: Theme.of(context).primaryColor,
+                          color: Theme.of(context).colorScheme.primary,
                           borderRadius: BorderRadius.all(Radius.circular(10)),
-                          boxShadow: [BoxShadow(blurRadius: 50, color: Theme.of(context).hintColor.withOpacity(0.2))],
+                          boxShadow: [BoxShadow(blurRadius: 50, color: Theme.of(context).colorScheme.onSurfaceVariant.withOpacity(0.2))],
                         ),
                         child: Form(
                           key: loginFormKey,
@@ -212,9 +212,9 @@ class _OTPPageState extends State<OTPPage> {
                                   activeColor: Colors.transparent,
                                   inactiveColor: Colors.transparent,
                                   selectedColor: Colors.transparent,
-                                  selectedFillColor: config.Colors().mainColor(0.6),
+                                  selectedFillColor: config.AppColors().mainColor(0.6),
                                   inactiveFillColor: Color(0xFFF0F2F7),
-                                  activeFillColor: config.Colors().mainColor(0.6),
+                                  activeFillColor: config.AppColors().mainColor(0.6),
                                 ),
                                 animationDuration: Duration(milliseconds: 300),
                                 backgroundColor: Colors.transparent,
@@ -241,11 +241,11 @@ class _OTPPageState extends State<OTPPage> {
                                 keyboardType: TextInputType.text,
                                 decoration: InputDecoration(
                                   labelText: "New Password",
-                                  labelStyle: TextStyle(color: Theme.of(context).accentColor),
+                                  labelStyle: TextStyle(color: Theme.of(context).colorScheme.secondary),
                                   contentPadding: EdgeInsets.all(12),
                                   hintText: '••••••••••••',
-                                  hintStyle: TextStyle(color: Theme.of(context).focusColor.withOpacity(0.7)),
-                                  prefixIcon: Icon(Icons.lock_outline, color: Theme.of(context).accentColor),
+                                  hintStyle: TextStyle(color: Theme.of(context).colorScheme.primary.withOpacity(0.7)),
+                                  prefixIcon: Icon(Icons.lock_outline, color: Theme.of(context).colorScheme.secondary),
                                   suffixIcon: GestureDetector(
                                     onTap: () {
                                       setState(() {
@@ -267,9 +267,9 @@ class _OTPPageState extends State<OTPPage> {
                                     maxWidth: heightDp * 20 / 3 * 4 + widthDp * 10,
                                     maxHeight: heightDp * 20,
                                   ),
-                                  border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
-                                  focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.5))),
-                                  enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
+                                  border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
+                                  focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.5))),
+                                  enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
                                   errorMaxLines: 2,
                                 ),
                               ),
@@ -286,11 +286,11 @@ class _OTPPageState extends State<OTPPage> {
                                 keyboardType: TextInputType.text,
                                 decoration: InputDecoration(
                                   labelText: "New Password Confirmation",
-                                  labelStyle: TextStyle(color: Theme.of(context).accentColor),
+                                  labelStyle: TextStyle(color: Theme.of(context).colorScheme.secondary),
                                   contentPadding: EdgeInsets.all(12),
                                   hintText: '••••••••••••',
-                                  hintStyle: TextStyle(color: Theme.of(context).focusColor.withOpacity(0.7)),
-                                  prefixIcon: Icon(Icons.lock_outline, color: Theme.of(context).accentColor),
+                                  hintStyle: TextStyle(color: Theme.of(context).colorScheme.primary.withOpacity(0.7)),
+                                  prefixIcon: Icon(Icons.lock_outline, color: Theme.of(context).colorScheme.secondary),
                                   suffixIcon: GestureDetector(
                                     onTap: () {
                                       setState(() {
@@ -312,28 +312,30 @@ class _OTPPageState extends State<OTPPage> {
                                     maxWidth: heightDp * 20 / 3 * 4 + widthDp * 10,
                                     maxHeight: heightDp * 20,
                                   ),
-                                  border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
-                                  focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.5))),
-                                  enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
+                                  border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
+                                  focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.5))),
+                                  enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
                                   errorMaxLines: 2,
                                 ),
                               ),
                               SizedBox(height: 30),
                               SizedBox(height: 30),
-                              FlatButton(
+                              TextButton(
+                                style: TextButton.styleFrom(
+                                  foregroundColor: Theme.of(context).colorScheme.onSurfaceVariant,
+                                ),
                                 onPressed: () async {
                                   await _keicyProgressDialog!.show();
                                   _authProvider!.forgotPassword(email: widget.email);
                                 },
-                                textColor: Theme.of(context).hintColor,
                                 child: Text("Resend"),
                               ),
                               BlockButtonWidget(
                                 text: Text(
                                   "Send",
-                                  style: TextStyle(color: Theme.of(context).primaryColor),
+                                  style: TextStyle(color: Theme.of(context).colorScheme.primary),
                                 ),
-                                color: Theme.of(context).accentColor,
+                                color: Theme.of(context).colorScheme.secondary,
                                 onPressed: () {
                                   _onLoginButtonPressed();
                                 },

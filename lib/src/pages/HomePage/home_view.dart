@@ -57,7 +57,7 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       body: NotificationListener<OverscrollIndicatorNotification>(
         onNotification: (notification) {
-          notification.disallowGlow();
+          notification.disallowIndicator();
           return true;
         },
         child: SingleChildScrollView(
@@ -104,7 +104,7 @@ class _HomeViewState extends State<HomeView> {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(heightDp * 10),
                               // color: Colors.red.withOpacity(0.3),
-                              color: config.Colors().mainColor(0.2),
+                              color: config.AppColors().mainColor(0.2),
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,

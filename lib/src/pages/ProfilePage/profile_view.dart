@@ -232,7 +232,7 @@ class _ProfileViewState extends State<ProfileView> {
 
           return NotificationListener<OverscrollIndicatorNotification>(
             onNotification: (notification) {
-              notification.disallowGlow();
+              notification.disallowIndicator();
               return true;
             },
             child: SingleChildScrollView(
@@ -299,11 +299,11 @@ class _ProfileViewState extends State<ProfileView> {
                 Text(
                   "${_deliveryUserModel!.firstName} ${_deliveryUserModel!.lastName}",
                   textAlign: TextAlign.left,
-                  style: Theme.of(context).textTheme.headline3,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 Text(
                   "${_deliveryUserModel!.email}",
-                  style: Theme.of(context).textTheme.caption,
+                  style: Theme.of(context).textTheme.bodySmall,
                 )
               ],
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -316,7 +316,7 @@ class _ProfileViewState extends State<ProfileView> {
                 width: widthDp * 80,
                 height: heightDp * 30,
                 borderRadius: heightDp * 6,
-                color: Theme.of(context).hintColor,
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
                 child: Text(
                   "Save",
                   style: TextStyle(fontSize: fontSp * 16, color: Colors.white),
@@ -410,7 +410,7 @@ class _ProfileViewState extends State<ProfileView> {
   }
 
   Future _getAvatarImage(ImageSource source) async {
-    final pickedFile = await picker.getImage(source: source, maxWidth: 500, maxHeight: 500);
+    final pickedFile = await picker.pickImage(source: source, maxWidth: 500, maxHeight: 500);
 
     if (pickedFile != null) {
       setState(() {
@@ -428,15 +428,17 @@ class _ProfileViewState extends State<ProfileView> {
   Widget _panel1() {
     return Container(
       decoration: BoxDecoration(
-        color: Theme.of(context).primaryColor,
+        color: Theme.of(context).colorScheme.primary,
         borderRadius: BorderRadius.circular(6),
-        boxShadow: [BoxShadow(color: Theme.of(context).hintColor.withOpacity(0.15), offset: Offset(0, 3), blurRadius: 10)],
+        boxShadow: [BoxShadow(color: Theme.of(context).colorScheme.onSurfaceVariant.withOpacity(0.15), offset: Offset(0, 3), blurRadius: 10)],
       ),
       child: Row(
         children: <Widget>[
           Expanded(
-            child: FlatButton(
-              padding: EdgeInsets.symmetric(vertical: widthDp * 20, horizontal: heightDp * 10),
+            child: TextButton(
+              style: TextButton.styleFrom(
+                padding: EdgeInsets.symmetric(vertical: widthDp * 20, horizontal: heightDp * 10),
+              ),
               onPressed: () {},
               child: Row(
                 children: <Widget>[
@@ -458,9 +460,9 @@ class _ProfileViewState extends State<ProfileView> {
   Widget _orderPanel() {
     return Container(
       decoration: BoxDecoration(
-        color: Theme.of(context).primaryColor,
+        color: Theme.of(context).colorScheme.primary,
         borderRadius: BorderRadius.circular(6),
-        boxShadow: [BoxShadow(color: Theme.of(context).hintColor.withOpacity(0.15), offset: Offset(0, 3), blurRadius: 10)],
+        boxShadow: [BoxShadow(color: Theme.of(context).colorScheme.onSurfaceVariant.withOpacity(0.15), offset: Offset(0, 3), blurRadius: 10)],
       ),
       child: ListView(
         shrinkWrap: true,
@@ -476,7 +478,7 @@ class _ProfileViewState extends State<ProfileView> {
               padding: EdgeInsets.all(0),
               minWidth: 50.0,
               height: 25.0,
-              child: FlatButton(
+              child: TextButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => MyDeliveryOrderListPage(haveAppBar: true)));
                 },
@@ -495,9 +497,9 @@ class _ProfileViewState extends State<ProfileView> {
   Widget _profileSettingPanel() {
     return Container(
       decoration: BoxDecoration(
-        color: Theme.of(context).primaryColor,
+        color: Theme.of(context).colorScheme.primary,
         borderRadius: BorderRadius.circular(6),
-        boxShadow: [BoxShadow(color: Theme.of(context).hintColor.withOpacity(0.15), offset: Offset(0, 3), blurRadius: 10)],
+        boxShadow: [BoxShadow(color: Theme.of(context).colorScheme.onSurfaceVariant.withOpacity(0.15), offset: Offset(0, 3), blurRadius: 10)],
       ),
       child: ListView(
         shrinkWrap: true,
@@ -565,9 +567,9 @@ class _ProfileViewState extends State<ProfileView> {
   Widget _accountSettingPanel() {
     return Container(
       decoration: BoxDecoration(
-        color: Theme.of(context).primaryColor,
+        color: Theme.of(context).colorScheme.primary,
         borderRadius: BorderRadius.circular(6),
-        boxShadow: [BoxShadow(color: Theme.of(context).hintColor.withOpacity(0.15), offset: Offset(0, 3), blurRadius: 10)],
+        boxShadow: [BoxShadow(color: Theme.of(context).colorScheme.onSurfaceVariant.withOpacity(0.15), offset: Offset(0, 3), blurRadius: 10)],
       ),
       child: ListView(
         shrinkWrap: true,
@@ -630,7 +632,7 @@ class _ProfileViewState extends State<ProfileView> {
             dense: true,
             title: Row(
               children: <Widget>[
-                Icon(Icons.info, size: heightDp * 22, color: Theme.of(context).focusColor),
+                Icon(Icons.info, size: heightDp * 22, color: Theme.of(context).colorScheme.primary),
                 SizedBox(width: 10),
                 Text(
                   'Help & Support',
@@ -639,7 +641,7 @@ class _ProfileViewState extends State<ProfileView> {
               ],
             ),
             trailing: IconButton(
-              icon: Icon(Icons.arrow_forward_ios, size: heightDp * 16, color: Theme.of(context).focusColor),
+              icon: Icon(Icons.arrow_forward_ios, size: heightDp * 16, color: Theme.of(context).colorScheme.primary),
               onPressed: null,
             ),
           ),

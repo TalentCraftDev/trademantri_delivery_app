@@ -80,7 +80,7 @@ class _OrderDetailPageState extends State<OrderDetailPage> {
                               child: Container(
                                 padding: EdgeInsets.symmetric(horizontal: heightDp * 15, vertical: heightDp * 5),
                                 decoration: BoxDecoration(
-                                  color: config.Colors().mainColor(1),
+                                  color: config.AppColors().mainColor(1),
                                   borderRadius: BorderRadius.circular(heightDp * 8),
                                 ),
                                 child: Text(

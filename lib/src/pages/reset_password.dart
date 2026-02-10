@@ -44,7 +44,7 @@
 //                       child: Container(
 //                         width: config.App(context).appWidth(100),
 //                         height: config.App(context).appHeight(37),
-//                         decoration: BoxDecoration(color: Theme.of(context).accentColor),
+//                         decoration: BoxDecoration(color: Theme.of(context).colorScheme.secondary),
 //                       ),
 //                     ),
 //                     Positioned(
@@ -54,7 +54,7 @@
 //                         height: config.App(context).appHeight(37),
 //                         child: Text(
 //                           S.of(context).reset,
-//                           style: Theme.of(context).textTheme.headline2.merge(TextStyle(color: Theme.of(context).primaryColor)),
+//                           style: Theme.of(context).textTheme.headlineMedium.merge(TextStyle(color: Theme.of(context).colorScheme.primary)),
 //                         ),
 //                       ),
 //                     ),
@@ -62,10 +62,10 @@
 //                       top: config.App(context).appHeight(37) - 50,
 //                       child: Container(
 //                           decoration:
-//                               BoxDecoration(color: Theme.of(context).primaryColor, borderRadius: BorderRadius.all(Radius.circular(10)), boxShadow: [
+//                               BoxDecoration(color: Theme.of(context).colorScheme.primary, borderRadius: BorderRadius.all(Radius.circular(10)), boxShadow: [
 //                             BoxShadow(
 //                               blurRadius: 50,
-//                               color: Theme.of(context).hintColor.withOpacity(0.2),
+//                               color: Theme.of(context).colorScheme.onSurfaceVariant.withOpacity(0.2),
 //                             )
 //                           ]),
 //                           margin: EdgeInsets.symmetric(
@@ -86,14 +86,14 @@
 //                                   validator: (input) => input.length < 6 ? S.of(context).input_reset_password_token : null,
 //                                   decoration: InputDecoration(
 //                                     labelText: "Reset Password Token",
-//                                     labelStyle: TextStyle(color: Theme.of(context).accentColor),
+//                                     labelStyle: TextStyle(color: Theme.of(context).colorScheme.secondary),
 //                                     contentPadding: EdgeInsets.all(12),
 //                                     hintText: '',
-//                                     hintStyle: TextStyle(color: Theme.of(context).focusColor.withOpacity(0.7)),
-//                                     prefixIcon: Icon(Icons.alternate_email, color: Theme.of(context).accentColor),
-//                                     border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
-//                                     focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.5))),
-//                                     enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
+//                                     hintStyle: TextStyle(color: Theme.of(context).colorScheme.primary.withOpacity(0.7)),
+//                                     prefixIcon: Icon(Icons.alternate_email, color: Theme.of(context).colorScheme.secondary),
+//                                     border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
+//                                     focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.5))),
+//                                     enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
 //                                   ),
 //                                 ),
 //                                 SizedBox(height: 30),
@@ -104,23 +104,23 @@
 //                                   validator: (input) => input.length < 6 ? S.of(context).should_password_input : null,
 //                                   decoration: InputDecoration(
 //                                     labelText: "New Password",
-//                                     labelStyle: TextStyle(color: Theme.of(context).accentColor),
+//                                     labelStyle: TextStyle(color: Theme.of(context).colorScheme.secondary),
 //                                     contentPadding: EdgeInsets.all(12),
 //                                     hintText: '',
-//                                     hintStyle: TextStyle(color: Theme.of(context).focusColor.withOpacity(0.7)),
-//                                     prefixIcon: Icon(Icons.lock, color: Theme.of(context).accentColor),
-//                                     border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
-//                                     focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.5))),
-//                                     enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
+//                                     hintStyle: TextStyle(color: Theme.of(context).colorScheme.primary.withOpacity(0.7)),
+//                                     prefixIcon: Icon(Icons.lock, color: Theme.of(context).colorScheme.secondary),
+//                                     border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
+//                                     focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.5))),
+//                                     enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
 //                                   ),
 //                                 ),
 //                                 SizedBox(height: 30),
 //                                 BlockButtonWidget(
 //                                   text: Text(
 //                                     S.of(context).reset,
-//                                     style: TextStyle(color: Theme.of(context).primaryColor),
+//                                     style: TextStyle(color: Theme.of(context).colorScheme.primary),
 //                                   ),
-//                                   color: Theme.of(context).accentColor,
+//                                   color: Theme.of(context).colorScheme.secondary,
 //                                   onPressed: () {
 //                                     state is ResetLoading ? () {} : _onResetButtonPressed();
 //                                   },
@@ -140,7 +140,7 @@
 //                   children: <Widget>[
 //                     Text(state.message),
 //                     FlatButton(
-//                       textColor: Theme.of(context).primaryColor,
+//                       textColor: Theme.of(context).colorScheme.primary,
 //                       child: Text('Retry'),
 //                       onPressed: () {
 //                         authBloc.add(AppLoaded());

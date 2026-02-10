@@ -176,7 +176,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                 child: Container(
                   width: deviceWidth,
                   height: heightDp1 * 250,
-                  decoration: BoxDecoration(color: Theme.of(context).accentColor),
+                  decoration: BoxDecoration(color: Theme.of(context).colorScheme.secondary),
                 ),
               ),
               Positioned(
@@ -193,15 +193,15 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                         SizedBox(height: heightDp1 * 20),
                         Text(
                           'Let\'s Start with register!',
-                          style: Theme.of(context).textTheme.headline2!.merge(TextStyle(color: Theme.of(context).primaryColor)),
+                          style: Theme.of(context).textTheme.headlineMedium!.merge(TextStyle(color: Theme.of(context).colorScheme.primary)),
                         ),
                         SizedBox(height: heightDp1 * 20),
                         Container(
                           width: deviceWidth * 0.88,
                           decoration: BoxDecoration(
-                            color: Theme.of(context).primaryColor,
+                            color: Theme.of(context).colorScheme.primary,
                             borderRadius: BorderRadius.all(Radius.circular(10)),
-                            boxShadow: [BoxShadow(blurRadius: 50, color: Theme.of(context).hintColor.withOpacity(0.2))],
+                            boxShadow: [BoxShadow(blurRadius: 50, color: Theme.of(context).colorScheme.onSurfaceVariant.withOpacity(0.2))],
                           ),
                           margin: EdgeInsets.symmetric(horizontal: widthDp * 20),
                           padding: EdgeInsets.symmetric(vertical: heightDp1 * 20, horizontal: widthDp * 20),
@@ -218,14 +218,14 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                   validator: (input) => input!.length < 1 ? "Input first name" : null,
                                   decoration: InputDecoration(
                                     labelText: "First Name",
-                                    labelStyle: TextStyle(color: Theme.of(context).accentColor),
+                                    labelStyle: TextStyle(color: Theme.of(context).colorScheme.secondary),
                                     contentPadding: EdgeInsets.all(12),
                                     hintText: '',
-                                    hintStyle: TextStyle(color: Theme.of(context).focusColor.withOpacity(0.7)),
-                                    prefixIcon: Icon(Icons.person_rounded, color: Theme.of(context).accentColor),
-                                    border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
-                                    focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.5))),
-                                    enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
+                                    hintStyle: TextStyle(color: Theme.of(context).colorScheme.primary.withOpacity(0.7)),
+                                    prefixIcon: Icon(Icons.person_rounded, color: Theme.of(context).colorScheme.secondary),
+                                    border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
+                                    focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.5))),
+                                    enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
                                   ),
                                   onSaved: (input) => _deliveryUserModel.firstName = input!.trim(),
                                   onFieldSubmitted: (input) {
@@ -240,14 +240,14 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                   validator: (input) => input!.length < 1 ? "Input last name" : null,
                                   decoration: InputDecoration(
                                     labelText: "Last Name",
-                                    labelStyle: TextStyle(color: Theme.of(context).accentColor),
+                                    labelStyle: TextStyle(color: Theme.of(context).colorScheme.secondary),
                                     contentPadding: EdgeInsets.all(12),
                                     hintText: '',
-                                    hintStyle: TextStyle(color: Theme.of(context).focusColor.withOpacity(0.7)),
-                                    prefixIcon: Icon(Icons.person_outline, color: Theme.of(context).accentColor),
-                                    border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
-                                    focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.5))),
-                                    enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
+                                    hintStyle: TextStyle(color: Theme.of(context).colorScheme.primary.withOpacity(0.7)),
+                                    prefixIcon: Icon(Icons.person_outline, color: Theme.of(context).colorScheme.secondary),
+                                    border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
+                                    focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.5))),
+                                    enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
                                   ),
                                   onSaved: (input) => _deliveryUserModel.lastName = input!.trim(),
                                   onFieldSubmitted: (input) {
@@ -262,14 +262,14 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                   validator: (input) => !input!.contains('@') ? "Should be a valid email" : null,
                                   decoration: InputDecoration(
                                     labelText: "Email",
-                                    labelStyle: TextStyle(color: Theme.of(context).accentColor),
+                                    labelStyle: TextStyle(color: Theme.of(context).colorScheme.secondary),
                                     contentPadding: EdgeInsets.all(12),
                                     hintText: '',
-                                    hintStyle: TextStyle(color: Theme.of(context).focusColor.withOpacity(0.7)),
-                                    prefixIcon: Icon(Icons.alternate_email, color: Theme.of(context).accentColor),
-                                    border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
-                                    focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.5))),
-                                    enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
+                                    hintStyle: TextStyle(color: Theme.of(context).colorScheme.primary.withOpacity(0.7)),
+                                    prefixIcon: Icon(Icons.alternate_email, color: Theme.of(context).colorScheme.secondary),
+                                    border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
+                                    focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.5))),
+                                    enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
                                   ),
                                   onSaved: (input) => _deliveryUserModel.email = input!.trim(),
                                   onFieldSubmitted: (input) {
@@ -284,14 +284,14 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                   validator: (input) => input!.length != 10 ? "Should be 10 numbers" : null,
                                   decoration: InputDecoration(
                                     labelText: "Phone Number",
-                                    labelStyle: TextStyle(color: Theme.of(context).accentColor),
+                                    labelStyle: TextStyle(color: Theme.of(context).colorScheme.secondary),
                                     contentPadding: EdgeInsets.all(12),
                                     hintText: '',
-                                    hintStyle: TextStyle(color: Theme.of(context).focusColor.withOpacity(0.7)),
-                                    prefixIcon: Icon(Icons.phone_android_outlined, color: Theme.of(context).accentColor),
-                                    border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
-                                    focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.5))),
-                                    enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
+                                    hintStyle: TextStyle(color: Theme.of(context).colorScheme.primary.withOpacity(0.7)),
+                                    prefixIcon: Icon(Icons.phone_android_outlined, color: Theme.of(context).colorScheme.secondary),
+                                    border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
+                                    focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.5))),
+                                    enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
                                   ),
                                   onSaved: (input) => _deliveryUserModel.mobile = input!.trim(),
                                   onFieldSubmitted: (input) {
@@ -311,12 +311,12 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                   obscureText: passwordObscureText!,
                                   decoration: InputDecoration(
                                     labelText: "Password",
-                                    labelStyle: TextStyle(color: Theme.of(context).accentColor),
+                                    labelStyle: TextStyle(color: Theme.of(context).colorScheme.secondary),
                                     contentPadding: EdgeInsets.all(12),
                                     hintText: '••••••••••••',
                                     errorMaxLines: 2,
-                                    hintStyle: TextStyle(color: Theme.of(context).focusColor.withOpacity(0.7)),
-                                    prefixIcon: Icon(Icons.lock_outline, color: Theme.of(context).accentColor),
+                                    hintStyle: TextStyle(color: Theme.of(context).colorScheme.primary.withOpacity(0.7)),
+                                    prefixIcon: Icon(Icons.lock_outline, color: Theme.of(context).colorScheme.secondary),
                                     suffixIcon: GestureDetector(
                                       onTap: () {
                                         setState(() {
@@ -338,9 +338,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                       maxWidth: heightDp * 20 / 3 * 4 + widthDp * 10,
                                       maxHeight: heightDp * 20,
                                     ),
-                                    border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
-                                    focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.5))),
-                                    enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
+                                    border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
+                                    focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.5))),
+                                    enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
                                   ),
                                   onSaved: (input) => _deliveryUserModel.password = input!.trim(),
                                   onFieldSubmitted: (input) {
@@ -360,12 +360,12 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                   obscureText: confirmObscureText!,
                                   decoration: InputDecoration(
                                     labelText: "Confirm Password",
-                                    labelStyle: TextStyle(color: Theme.of(context).accentColor),
+                                    labelStyle: TextStyle(color: Theme.of(context).colorScheme.secondary),
                                     contentPadding: EdgeInsets.all(12),
                                     hintText: '••••••••••••',
                                     errorMaxLines: 2,
-                                    hintStyle: TextStyle(color: Theme.of(context).focusColor.withOpacity(0.7)),
-                                    prefixIcon: Icon(Icons.lock_outline, color: Theme.of(context).accentColor),
+                                    hintStyle: TextStyle(color: Theme.of(context).colorScheme.primary.withOpacity(0.7)),
+                                    prefixIcon: Icon(Icons.lock_outline, color: Theme.of(context).colorScheme.secondary),
                                     suffixIcon: GestureDetector(
                                       onTap: () {
                                         setState(() {
@@ -387,9 +387,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                       maxWidth: heightDp * 20 / 3 * 4 + widthDp * 10,
                                       maxHeight: heightDp * 20,
                                     ),
-                                    border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
-                                    focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.5))),
-                                    enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
+                                    border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
+                                    focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.5))),
+                                    enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
                                   ),
                                   onSaved: (input) => _deliveryUserModel.password = input!.trim(),
                                   onFieldSubmitted: (input) {
@@ -400,15 +400,18 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 BlockButtonWidget(
                                   text: Text(
                                     "Register",
-                                    style: TextStyle(color: Theme.of(context).primaryColor),
+                                    style: TextStyle(color: Theme.of(context).colorScheme.primary),
                                   ),
-                                  color: Theme.of(context).accentColor,
+                                  color: Theme.of(context).colorScheme.secondary,
                                   onPressed: () {
                                     _onSignUpButtonPressed();
                                   },
                                 ),
                                 SizedBox(height: 10),
-                                FlatButton(
+                                TextButton(
+                                  style: TextButton.styleFrom(
+                                    foregroundColor: Theme.of(context).colorScheme.onSurfaceVariant,
+                                  ),
                                   onPressed: () {
                                     Navigator.of(context).pushReplacement(
                                       MaterialPageRoute(
@@ -416,7 +419,6 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                       ),
                                     );
                                   },
-                                  textColor: Theme.of(context).hintColor,
                                   child: Text('I have account? Back to login'),
                                 )
                               ],
@@ -430,7 +432,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
               ),
               // Positioned(
               //   bottom: 10,
-              //   child: FlatButton(
+              //   child: TextButton(
               //     onPressed: () {
               //       Navigator.of(context).pushReplacement(
               //         MaterialPageRoute(
@@ -438,7 +440,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
               //         ),
               //       );
               //     },
-              //     textColor: Theme.of(context).hintColor,
+              //     textColor: Theme.of(context).colorScheme.onSurfaceVariant,
               //     child: Text('I have account? Back to login'),
               //   ),
               // )

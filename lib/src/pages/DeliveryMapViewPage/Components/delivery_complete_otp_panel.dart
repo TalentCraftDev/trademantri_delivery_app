@@ -109,9 +109,9 @@ class _DeliveryCompleteOTPPanelState extends State<DeliveryCompleteOTPPanel> {
                     activeColor: Colors.transparent,
                     inactiveColor: Colors.transparent,
                     selectedColor: Colors.transparent,
-                    selectedFillColor: config.Colors().mainColor(0.6),
+                    selectedFillColor: config.AppColors().mainColor(0.6),
                     inactiveFillColor: Color(0xFFF0F2F7),
-                    activeFillColor: config.Colors().mainColor(0.6),
+                    activeFillColor: config.AppColors().mainColor(0.6),
                   ),
                   animationDuration: Duration(milliseconds: 300),
                   backgroundColor: Colors.transparent,
@@ -159,7 +159,7 @@ class _DeliveryCompleteOTPPanelState extends State<DeliveryCompleteOTPPanel> {
                   width: widthDp * 120,
                   height: heightDp * 40,
                   borderRadius: heightDp * 8,
-                  color: config.Colors().mainColor(1),
+                  color: config.AppColors().mainColor(1),
                   child: deliveryOTPProvider.deliveryOTPState.progressState == 0 || deliveryOTPProvider.deliveryOTPState.progressState == 1
                       ? Theme(
                           data: Theme.of(context).copyWith(brightness: Brightness.dark),
@@ -178,7 +178,7 @@ class _DeliveryCompleteOTPPanelState extends State<DeliveryCompleteOTPPanel> {
                   width: widthDp * 120,
                   height: heightDp * 40,
                   borderRadius: heightDp * 8,
-                  color: _otpController.text.length == 4 ? config.Colors().mainColor(1) : Colors.grey.withOpacity(0.6),
+                  color: _otpController.text.length == 4 ? config.AppColors().mainColor(1) : Colors.grey.withOpacity(0.6),
                   child: Text("Verify", style: TextStyle(fontSize: fontSp * 16, color: Colors.white)),
                   onPressed: _otpController.text.length != 4
                       ? null

@@ -40,8 +40,7 @@ class KeicyLocalNotification {
 
   FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
   AndroidInitializationSettings? _initializationSettingsAndroid;
-  IOSInitializationSettings? _initializationSettingsIOS;
-  MacOSInitializationSettings? _initializationSettingsMacOS;
+  DarwinInitializationSettings? _initializationSettingsDarwin;
   InitializationSettings? _initializationSettings;
 
   Function(ReceivedNotification)? _receivedNotificationHandler;
@@ -63,39 +62,32 @@ class KeicyLocalNotification {
       _notificationAppLaunchDetails = await flutterLocalNotificationsPlugin.getNotificationAppLaunchDetails();
 
       if (_notificationAppLaunchDetails?.didNotificationLaunchApp ?? false) {
-        _selectedNotificationPayload = _notificationAppLaunchDetails!.payload;
+        _selectedNotificationPayload = _notificationAppLaunchDetails!.notificationResponse?.payload;
       }
 
       /// init setting
       flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
       _initializationSettingsAndroid = AndroidInitializationSettings(androidDefaltIcon);
-      _initializationSettingsIOS = IOSInitializationSettings(
-        requestAlertPermission: false,
-        requestBadgePermission: false,
-        requestSoundPermission: false,
-        onDidReceiveLocalNotification: (int? id, String? title, String? body, String? payload) async {
-          _didReceiveLocalNotificationSubject.add(ReceivedNotification(id: id, title: title, body: body, payload: payload));
-        },
-      );
-      _initializationSettingsMacOS = MacOSInitializationSettings(
+      _initializationSettingsDarwin = const DarwinInitializationSettings(
         requestAlertPermission: false,
         requestBadgePermission: false,
         requestSoundPermission: false,
       );
       _initializationSettings = InitializationSettings(
         android: _initializationSettingsAndroid,
-        iOS: _initializationSettingsIOS,
-        macOS: _initializationSettingsMacOS,
+        iOS: _initializationSettingsDarwin,
+        macOS: _initializationSettingsDarwin,
       );
 
       bool? result = await flutterLocalNotificationsPlugin.initialize(
         _initializationSettings!,
-        onSelectNotification: (String? payload) async {
+        onDidReceiveNotificationResponse: (NotificationResponse response) async {
+          final payload = response.payload;
           if (payload != null) {
             debugPrint('notification payload: $payload');
           }
           _selectedNotificationPayload = payload;
-          selectNotificationSubject.add(payload!);
+          if (payload != null) selectNotificationSubject.add(payload);
         },
       );
 
@@ -209,7 +201,7 @@ class KeicyLocalNotification {
 
       final NotificationDetails platformChannelSpecifics = NotificationDetails(
         android: androidPlatformChannelSpecifics,
-        iOS: IOSNotificationDetails(subtitle: 'the subtitle'),
+        iOS: const DarwinNotificationDetails(subtitle: 'the subtitle'),
       );
 
       if (receivedNotification.title!.toLowerCase().contains("reward points")) {

@@ -266,7 +266,7 @@ class _NotificationListViewState extends State<NotificationListView> with Single
         Expanded(
           child: NotificationListener<OverscrollIndicatorNotification>(
             onNotification: (notification) {
-              notification.disallowGlow();
+              notification.disallowIndicator();
               return true;
             },
             child: SmartRefresher(

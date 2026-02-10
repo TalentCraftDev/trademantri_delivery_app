@@ -209,7 +209,7 @@ class _ServiceOrderWidgetState extends State<ServiceOrderWidget> {
                 ),
                 Text(
                   "${widget.serviceData!["orderQuantity"]}",
-                  style: TextStyle(fontSize: fontSp * 18, color: config.Colors().mainColor(1), fontWeight: FontWeight.w500),
+                  style: TextStyle(fontSize: fontSp * 18, color: config.AppColors().mainColor(1), fontWeight: FontWeight.w500),
                 ),
               ],
             ),
@@ -245,14 +245,14 @@ class _ServiceOrderWidgetState extends State<ServiceOrderWidget> {
             : widget.serviceData!["promocodeDiscount"] == 0 || widget.serviceData!["promocodeDiscount"] == null
                 ? Text(
                     "₹ ${numFormat.format((price - discount) * widget.serviceData!["orderQuantity"])}",
-                    style: TextStyle(fontSize: fontSp * 16, color: config.Colors().mainColor(1), fontWeight: FontWeight.w500),
+                    style: TextStyle(fontSize: fontSp * 16, color: config.AppColors().mainColor(1), fontWeight: FontWeight.w500),
                   )
                 : Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Text(
                         "₹ ${numFormat.format((price - discount - promocodeDiscount) * widget.serviceData!["orderQuantity"])}",
-                        style: TextStyle(fontSize: fontSp * 16, color: config.Colors().mainColor(1), fontWeight: FontWeight.w500),
+                        style: TextStyle(fontSize: fontSp * 16, color: config.AppColors().mainColor(1), fontWeight: FontWeight.w500),
                       ),
                       SizedBox(width: widthDp * 3),
                       Text(

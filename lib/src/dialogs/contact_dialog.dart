@@ -31,15 +31,15 @@ class ContactDialog {
       return new InputDecoration(
         hintText: hintText,
         labelText: labelText,
-        hintStyle: Theme.of(context).textTheme.bodyText2!.merge(
-              TextStyle(color: Theme.of(context).focusColor),
+        hintStyle: Theme.of(context).textTheme.bodyMedium!.merge(
+              TextStyle(color: Theme.of(context).colorScheme.primary),
             ),
-        enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).hintColor.withOpacity(0.3))),
-        focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).hintColor.withOpacity(0.8))),
-        errorBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).errorColor.withOpacity(0.3))),
-        focusedErrorBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).errorColor.withOpacity(0.8))),
-        labelStyle: Theme.of(context).textTheme.bodyText2!.merge(
-              TextStyle(color: Theme.of(context).hintColor),
+        enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.onSurfaceVariant.withOpacity(0.3))),
+        focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.onSurfaceVariant.withOpacity(0.8))),
+        errorBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.error.withOpacity(0.3))),
+        focusedErrorBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.error.withOpacity(0.8))),
+        labelStyle: Theme.of(context).textTheme.bodyMedium!.merge(
+              TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant),
             ),
         alignLabelWithHint: true,
         contentPadding: EdgeInsets.symmetric(horizontal: widthDp * 10, vertical: heightDp * 10),
@@ -69,7 +69,7 @@ class ContactDialog {
               SizedBox(width: heightDp * 10),
               Text(
                 'Contact Us',
-                style: Theme.of(context).textTheme.bodyText1,
+                style: Theme.of(context).textTheme.bodyLarge,
               )
             ],
           ),
@@ -81,7 +81,7 @@ class ContactDialog {
                   new TextFormField(
                     controller: _nameController,
                     focusNode: _nameFocusNode,
-                    style: TextStyle(color: Theme.of(context).hintColor),
+                    style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant),
                     keyboardType: TextInputType.text,
                     decoration: getInputDecoration(labelText: 'Name'),
                     validator: (input) => input!.isEmpty ? "Please input name" : null,
@@ -96,7 +96,7 @@ class ContactDialog {
                   new TextFormField(
                     controller: _phoneController,
                     focusNode: _phoneFocusNode,
-                    style: TextStyle(color: Theme.of(context).hintColor),
+                    style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant),
                     keyboardType: TextInputType.phone,
                     decoration: getInputDecoration(hintText: '', labelText: 'Phone Number'),
                     validator: (input) => input!.length != 10 ? "Should be 10 numbers" : null,
@@ -111,7 +111,7 @@ class ContactDialog {
                   new TextFormField(
                     controller: _emailController,
                     focusNode: _emailFocusNode,
-                    style: TextStyle(color: Theme.of(context).hintColor),
+                    style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant),
                     keyboardType: TextInputType.emailAddress,
                     decoration: getInputDecoration(hintText: '', labelText: 'email'),
                     validator: (input) => !KeicyValidators.isValidEmail(input!) ? "Should be a valid email" : null,
@@ -126,7 +126,7 @@ class ContactDialog {
                   new TextFormField(
                     controller: _reasonController,
                     focusNode: _reasonFocusNode,
-                    style: TextStyle(color: Theme.of(context).hintColor),
+                    style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant),
                     decoration: getInputDecoration(hintText: '', labelText: 'Reason'),
                     validator: (input) => input!.length < 8 ? "Should be more than 8 charactors" : null,
                     maxLines: 10,
@@ -155,7 +155,7 @@ class ContactDialog {
                   onPressed: _submit,
                   child: Text(
                     'Save',
-                    style: TextStyle(color: Theme.of(context).accentColor),
+                    style: TextStyle(color: Theme.of(context).colorScheme.secondary),
                   ),
                 ),
               ],

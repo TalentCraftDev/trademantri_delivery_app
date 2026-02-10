@@ -38,7 +38,7 @@ class VerifyFailedDialog {
             textAlign: TextAlign.center,
           ),
           actions: [
-            FlatButton(
+            TextButton(
               onPressed: () {
                 Navigator.pop(context);
                 if (callBack != null) {
@@ -47,10 +47,10 @@ class VerifyFailedDialog {
               },
               child: Text(
                 'Resend link',
-                style: TextStyle(color: Theme.of(context).accentColor),
+                style: TextStyle(color: Theme.of(context).colorScheme.secondary),
               ),
             ),
-            FlatButton(
+            TextButton(
               onPressed: () {
                 Navigator.pop(context);
               },

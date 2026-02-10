@@ -16,7 +16,7 @@ class ImageFilePickDialog {
     ImagePicker picker = ImagePicker();
 
     Future _getFile(ImageSource source) async {
-      var pickedFile = await picker.getImage(source: source, maxWidth: 500, maxHeight: 500);
+      var pickedFile = await picker.pickImage(source: source, maxWidth: 500, maxHeight: 500);
 
       if (pickedFile != null && callback != null) {
         callback(File(pickedFile.path));

@@ -50,7 +50,7 @@ class OTPInvalidDialog {
                 KeicyRaisedButton(
                   width: heightDp * 120,
                   height: heightDp * 40,
-                  color: config.Colors().mainColor(1),
+                  color: config.AppColors().mainColor(1),
                   borderRadius: heightDp * 6,
                   padding: EdgeInsets.symmetric(horizontal: widthDp! * 5),
                   onPressed: () {

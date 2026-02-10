@@ -23,8 +23,10 @@ class NormalDialog {
           ),
           contentPadding: content == "" ? EdgeInsets.zero : EdgeInsets.fromLTRB(24.0, 20.0, 24.0, 24.0),
           actions: [
-            FlatButton(
-              color: config.Colors().mainColor(1),
+            TextButton(
+              style: TextButton.styleFrom(
+                backgroundColor: config.AppColors().mainColor(1),
+              ),
               onPressed: () {
                 Navigator.of(context).pop();
                 if (callback != null) {

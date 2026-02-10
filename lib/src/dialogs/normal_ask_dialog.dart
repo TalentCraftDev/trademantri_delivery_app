@@ -28,9 +28,11 @@ class NormalAskDialog {
             textAlign: TextAlign.center,
           ),
           actions: [
-            FlatButton(
-              color: config.Colors().mainColor(1),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+            TextButton(
+              style: TextButton.styleFrom(
+                backgroundColor: config.AppColors().mainColor(1),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+              ),
               onPressed: () {
                 Navigator.of(context).pop();
                 if (callback != null) callback();
@@ -41,12 +43,14 @@ class NormalAskDialog {
                 textAlign: TextAlign.center,
               ),
             ),
-            FlatButton(
+            TextButton(
+              style: TextButton.styleFrom(
+                backgroundColor: Color(0xFFB3B3B3),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+              ),
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              color: Color(0xFFB3B3B3),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
               child: Text(
                 cancelButtonString,
                 style: TextStyle(fontSize: fontSp * 14, color: Colors.black),

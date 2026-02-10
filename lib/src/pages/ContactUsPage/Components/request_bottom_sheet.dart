@@ -121,7 +121,7 @@ class RequestBottomSheet {
                 alignment: Alignment.bottomCenter,
                 child: NotificationListener<OverscrollIndicatorNotification>(
                   onNotification: (notification) {
-                    notification.disallowGlow();
+                    notification.disallowIndicator();
                     return true;
                   },
                   child: SingleChildScrollView(
@@ -290,7 +290,7 @@ class RequestBottomSheet {
                                 KeicyRaisedButton(
                                   width: double.infinity,
                                   height: fieldHeight,
-                                  color: config.Colors().mainColor(1),
+                                  color: config.AppColors().mainColor(1),
                                   borderRadius: heightDp * 10,
                                   child: Text(
                                     "Send Request",

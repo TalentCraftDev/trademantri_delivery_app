@@ -53,7 +53,7 @@ class ErrorPage extends StatelessWidget {
             KeicyRaisedButton(
               width: widthDp * 150,
               height: heightDp * 45,
-              color: config.Colors().mainColor(1),
+              color: config.AppColors().mainColor(1),
               borderRadius: heightDp * 6,
               child: Text(
                 "Try again",

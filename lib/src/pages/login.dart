@@ -166,7 +166,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                 child: Container(
                   width: deviceWidth,
                   height: heightDp1 * 250,
-                  decoration: BoxDecoration(color: Theme.of(context).accentColor),
+                  decoration: BoxDecoration(color: Theme.of(context).colorScheme.secondary),
                 ),
               ),
               Positioned(
@@ -179,7 +179,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                     SizedBox(height: heightDp1 * 20),
                     Text(
                       'Let\'s Start with Login!',
-                      style: Theme.of(context).textTheme.headline2!.merge(TextStyle(color: Theme.of(context).primaryColor)),
+                      style: Theme.of(context).textTheme.headlineMedium!.merge(TextStyle(color: Theme.of(context).colorScheme.primary)),
                     ),
                     SizedBox(height: heightDp1 * 20),
                     Container(
@@ -187,9 +187,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                       margin: EdgeInsets.symmetric(horizontal: widthDp * 20),
                       padding: EdgeInsets.symmetric(vertical: heightDp1 * 30, horizontal: widthDp * 20),
                       decoration: BoxDecoration(
-                        color: Theme.of(context).primaryColor,
+                        color: Theme.of(context).colorScheme.primary,
                         borderRadius: BorderRadius.all(Radius.circular(10)),
-                        boxShadow: [BoxShadow(blurRadius: 50, color: Theme.of(context).hintColor.withOpacity(0.2))],
+                        boxShadow: [BoxShadow(blurRadius: 50, color: Theme.of(context).colorScheme.onSurfaceVariant.withOpacity(0.2))],
                       ),
                       child: Form(
                         key: loginFormKey,
@@ -207,14 +207,14 @@ class _LoginWidgetState extends State<LoginWidget> {
                               keyboardType: TextInputType.emailAddress,
                               decoration: InputDecoration(
                                 labelText: "Email",
-                                labelStyle: TextStyle(color: Theme.of(context).accentColor),
+                                labelStyle: TextStyle(color: Theme.of(context).colorScheme.secondary),
                                 contentPadding: EdgeInsets.all(12),
                                 hintText: '',
-                                hintStyle: TextStyle(color: Theme.of(context).focusColor.withOpacity(0.7)),
-                                prefixIcon: Icon(Icons.person_outline, color: Theme.of(context).accentColor),
-                                border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
-                                focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.5))),
-                                enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
+                                hintStyle: TextStyle(color: Theme.of(context).colorScheme.primary.withOpacity(0.7)),
+                                prefixIcon: Icon(Icons.person_outline, color: Theme.of(context).colorScheme.secondary),
+                                border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
+                                focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.5))),
+                                enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
                               ),
                             ),
                             SizedBox(height: 30),
@@ -230,11 +230,11 @@ class _LoginWidgetState extends State<LoginWidget> {
                               keyboardType: TextInputType.text,
                               decoration: InputDecoration(
                                 labelText: "Password",
-                                labelStyle: TextStyle(color: Theme.of(context).accentColor),
+                                labelStyle: TextStyle(color: Theme.of(context).colorScheme.secondary),
                                 contentPadding: EdgeInsets.all(12),
                                 hintText: '••••••••••••',
-                                hintStyle: TextStyle(color: Theme.of(context).focusColor.withOpacity(0.7)),
-                                prefixIcon: Icon(Icons.lock_outline, color: Theme.of(context).accentColor),
+                                hintStyle: TextStyle(color: Theme.of(context).colorScheme.primary.withOpacity(0.7)),
+                                prefixIcon: Icon(Icons.lock_outline, color: Theme.of(context).colorScheme.secondary),
                                 suffixIcon: GestureDetector(
                                   onTap: () {
                                     setState(() {
@@ -256,9 +256,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   maxWidth: heightDp * 20 / 3 * 4 + widthDp * 10,
                                   maxHeight: heightDp * 20,
                                 ),
-                                border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
-                                focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.5))),
-                                enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
+                                border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
+                                focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.5))),
+                                enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
                                 errorMaxLines: 2,
                               ),
                             ),
@@ -266,9 +266,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                             BlockButtonWidget(
                               text: Text(
                                 'Login',
-                                style: TextStyle(color: Theme.of(context).primaryColor),
+                                style: TextStyle(color: Theme.of(context).colorScheme.primary),
                               ),
-                              color: Theme.of(context).accentColor,
+                              color: Theme.of(context).colorScheme.secondary,
                               onPressed: () {
                                 _onLoginButtonPressed();
                               },
@@ -285,7 +285,10 @@ class _LoginWidgetState extends State<LoginWidget> {
                 bottom: 10,
                 child: Column(
                   children: <Widget>[
-                    FlatButton(
+                    TextButton(
+                      style: TextButton.styleFrom(
+                        foregroundColor: Theme.of(context).colorScheme.onSurfaceVariant,
+                      ),
                       onPressed: () {
                         Navigator.of(context).pushReplacement(
                           MaterialPageRoute(
@@ -293,10 +296,12 @@ class _LoginWidgetState extends State<LoginWidget> {
                           ),
                         );
                       },
-                      textColor: Theme.of(context).hintColor,
                       child: Text('I forgot password ?'),
                     ),
-                    FlatButton(
+                    TextButton(
+                      style: TextButton.styleFrom(
+                        foregroundColor: Theme.of(context).colorScheme.onSurfaceVariant,
+                      ),
                       onPressed: () {
                         Navigator.of(context).pushReplacement(
                           MaterialPageRoute(
@@ -304,7 +309,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                           ),
                         );
                       },
-                      textColor: Theme.of(context).hintColor,
                       child: Text('I don\'t have an account?'),
                     ),
                   ],

@@ -150,7 +150,7 @@ class _BargainRequestWidgetState extends State<ChatMessageWidget> {
       constraints: BoxConstraints(maxWidth: deviceWidth! * 0.7),
       padding: EdgeInsets.symmetric(horizontal: widthDp! * 10, vertical: heightDp! * 10),
       decoration: BoxDecoration(
-        color: isMine ? config.Colors().mainColor(0.3) : Colors.blue.withOpacity(0.3),
+        color: isMine ? config.AppColors().mainColor(0.3) : Colors.blue.withOpacity(0.3),
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(isMine ? heightDp! * 6 : 0),
           topRight: Radius.circular(heightDp! * 6),
@@ -189,7 +189,7 @@ class _BargainRequestWidgetState extends State<ChatMessageWidget> {
   //       constraints: BoxConstraints(maxWidth: deviceWidth! * 0.7),
   //       padding: EdgeInsets.symmetric(horizontal: widthDp! * 10, vertical: heightDp! * 10),
   //       decoration: BoxDecoration(
-  //         color: isMine ? config.Colors().mainColor(0.3) : Colors.blue.withOpacity(0.3),
+  //         color: isMine ? config.AppColors().mainColor(0.3) : Colors.blue.withOpacity(0.3),
   //         borderRadius: BorderRadius.only(
   //           topLeft: Radius.circular(isMine ? heightDp! * 6 : 0),
   //           topRight: Radius.circular(heightDp! * 6),
@@ -281,7 +281,7 @@ class _BargainRequestWidgetState extends State<ChatMessageWidget> {
         : Container(
             constraints: BoxConstraints(maxWidth: deviceWidth! * 0.7),
             decoration: BoxDecoration(
-              color: isMine ? config.Colors().mainColor(0.3) : Colors.blue.withOpacity(0.3),
+              color: isMine ? config.AppColors().mainColor(0.3) : Colors.blue.withOpacity(0.3),
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(isMine ? heightDp! * 6 : 0),
                 topRight: Radius.circular(heightDp! * 6),
@@ -357,7 +357,7 @@ class _BargainRequestWidgetState extends State<ChatMessageWidget> {
   //       constraints: BoxConstraints(maxWidth: deviceWidth! * 0.7),
   //       padding: EdgeInsets.symmetric(horizontal: widthDp! * 10, vertical: heightDp! * 10),
   //       decoration: BoxDecoration(
-  //         color: isMine ? config.Colors().mainColor(0.3) : Colors.blue.withOpacity(0.3),
+  //         color: isMine ? config.AppColors().mainColor(0.3) : Colors.blue.withOpacity(0.3),
   //         borderRadius: BorderRadius.only(
   //           topLeft: Radius.circular(isMine ? heightDp! * 6 : 0),
   //           topRight: Radius.circular(heightDp! * 6),

@@ -1,55 +1,56 @@
 import 'package:flutter_logs/flutter_logs.dart';
+import 'package:http/http.dart';
 import 'package:http_interceptor/http_interceptor.dart';
 import 'package:delivery_app/src/helpers/helper.dart';
 
 class LoggingInterceptor implements InterceptorContract {
   @override
-  Future<RequestData> interceptRequest({RequestData? data}) async {
+  bool shouldInterceptRequest() => true;
+
+  @override
+  bool shouldInterceptResponse() => true;
+
+  @override
+  Future<BaseRequest> interceptRequest({required BaseRequest request}) async {
     if (isProd()) {
       FlutterLogs.logInfo(
         "LoggingInterceptor",
         "interceptRequest",
-        {
-          "url": data!.url.toString(),
-        }.toString(),
+        {"url": request.url.toString()}.toString(),
       );
     }
     if (!isProd()) {
       FlutterLogs.logInfo(
         "LoggingInterceptor",
         "interceptRequest",
-        data.toString(),
+        request.toString(),
       );
     }
-    return data!;
+    return request;
   }
 
   @override
-  Future<ResponseData> interceptResponse({ResponseData? data}) async {
-    if (!isProd()) {
+  Future<BaseResponse> interceptResponse({required BaseResponse response}) async {
+    if (!isProd() && response is Response) {
       FlutterLogs.logInfo(
         "LoggingInterceptor",
         "interceptResponse:body",
-        data!.body.toString(),
+        (response as Response).body.toString(),
       );
     }
     FlutterLogs.logInfo(
       "LoggingInterceptor",
       "interceptResponse:status",
-      {
-        "status": data!.statusCode.toString(),
-      }.toString(),
+      {"status": response.statusCode.toString()}.toString(),
     );
-    Map<String, String> headers = data.headers != null ? data.headers! : {};
+    final Map<String, String> headers = response.headers;
     if (headers.containsKey('trace-id')) {
       FlutterLogs.logInfo(
         "LoggingInterceptor",
         "interceptResponse:traceId",
-        {
-          "traceId": headers['trace-id'].toString(),
-        }.toString(),
+        {"traceId": headers['trace-id'].toString()}.toString(),
       );
     }
-    return data;
+    return response;
   }
 }

@@ -9,7 +9,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:share/share.dart';
 import 'package:delivery_app/config/app_config.dart' as config;
 import 'package:delivery_app/src/elements/keicy_raised_button.dart';
-import 'package:native_pdf_view/native_pdf_view.dart';
+import 'package:flutter_pdfview/flutter_pdfview.dart';
 
 class DocViewView extends StatefulWidget {
   final String? doc;
@@ -36,9 +36,7 @@ class _DocViewViewState extends State<DocViewView> {
 
   ///////////////////////////////
 
-  PdfController? _pdfController;
   int pages = 0;
-  int currentPage = 0;
   bool isReady = false;
   String errorMessage = '';
   String? path;
@@ -60,21 +58,25 @@ class _DocViewViewState extends State<DocViewView> {
 
     ///////////////////////////////
 
-    WidgetsBinding.instance!.addPostFrameCallback((timeStamp) async {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       _readPDF();
     });
   }
 
   void _readPDF() async {
-    File? file = await createFileOfPdfUrl();
-    if (file != null) {
-      path = file.path;
-      _pdfController = PdfController(document: PdfDocument.openFile(path!));
-    } else {
+    try {
+      File? file = await createFileOfPdfUrl();
+      if (file != null) {
+        path = file.path;
+        errorMessage = '';
+      } else {
+        path = "";
+      }
+    } catch (_) {
       path = "";
+      errorMessage = '';
     }
-
-    setState(() {});
+    if (mounted) setState(() {});
   }
 
   @override
@@ -127,7 +129,7 @@ class _DocViewViewState extends State<DocViewView> {
                       KeicyRaisedButton(
                         width: widthDp * 120,
                         height: heightDp * 35,
-                        color: config.Colors().mainColor(1),
+                        color: config.AppColors().mainColor(1),
                         borderRadius: heightDp * 6,
                         child: Text(
                           "Try again",
@@ -143,21 +145,25 @@ class _DocViewViewState extends State<DocViewView> {
                 )
               : Stack(
                   children: [
-                    PdfView(
-                      documentLoader: Center(child: CircularProgressIndicator()),
-                      pageLoader: Center(child: CircularProgressIndicator()),
-                      controller: _pdfController!,
-                      onDocumentLoaded: (document) {
-                        setState(() {});
+                    PDFView(
+                      filePath: path!,
+                      enableSwipe: true,
+                      swipeHorizontal: false,
+                      onRender: (int? pagesCount) {
+                        if (mounted) {
+                          setState(() {
+                            pages = pagesCount ?? 0;
+                            isReady = true;
+                          });
+                        }
                       },
-                      onPageChanged: (page) {
-                        setState(() {});
+                      onError: (dynamic err) {
+                        if (mounted) {
+                          setState(() {
+                            errorMessage = err?.toString() ?? 'Unknown error';
+                          });
+                        }
                       },
-                      onDocumentError: (err) {
-                        errorMessage = err.toString();
-                        setState(() {});
-                      },
-                      scrollDirection: Axis.vertical,
                     ),
                     errorMessage.isEmpty
                         ? Container()
@@ -173,7 +179,7 @@ class _DocViewViewState extends State<DocViewView> {
                                 KeicyRaisedButton(
                                   width: widthDp * 120,
                                   height: heightDp * 35,
-                                  color: config.Colors().mainColor(1),
+                                  color: config.AppColors().mainColor(1),
                                   borderRadius: heightDp * 6,
                                   child: Text(
                                     "Try again",

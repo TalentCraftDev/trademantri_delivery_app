@@ -93,7 +93,7 @@ class _MaintenanceWidgetState extends State<MaintenanceWidget> {
             height: deviceHeight * 0.45,
             padding: EdgeInsets.all(8.0),
             decoration: BoxDecoration(
-              color: appConfig.Colors().mainColor(1),
+              color: appConfig.AppColors().mainColor(1),
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(35),
                 topRight: Radius.circular(35),
@@ -167,7 +167,7 @@ class Curve1 extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     var paint = Paint()
-      ..color = appConfig.Colors().mainColor(1)
+      ..color = appConfig.AppColors().mainColor(1)
       ..strokeWidth = 15;
 
     var path = Path();

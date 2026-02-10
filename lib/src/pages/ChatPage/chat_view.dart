@@ -437,7 +437,7 @@ class _ChatViewState extends State<ChatView> {
           padding: EdgeInsets.symmetric(horizontal: widthDp * 15),
           child: NotificationListener<OverscrollIndicatorNotification>(
             onNotification: (notification) {
-              notification.disallowGlow();
+              notification.disallowIndicator();
               return true;
             },
             child: SmartRefresher(
@@ -500,7 +500,7 @@ class _ChatViewState extends State<ChatView> {
                           margin: EdgeInsets.symmetric(horizontal: widthDp * 10, vertical: heightDp * 20),
                           padding: EdgeInsets.symmetric(horizontal: widthDp * 10, vertical: heightDp * 5),
                           decoration: BoxDecoration(
-                            color: config.Colors().mainColor(0.3),
+                            color: config.AppColors().mainColor(0.3),
                             borderRadius: BorderRadius.circular(heightDp * 10),
                           ),
                           child: firstDateWidget,
@@ -518,7 +518,7 @@ class _ChatViewState extends State<ChatView> {
                           margin: EdgeInsets.symmetric(horizontal: widthDp * 10, vertical: heightDp * 20),
                           padding: EdgeInsets.symmetric(horizontal: widthDp * 10, vertical: heightDp * 5),
                           decoration: BoxDecoration(
-                            color: config.Colors().mainColor(0.3),
+                            color: config.AppColors().mainColor(0.3),
                             borderRadius: BorderRadius.circular(heightDp * 10),
                           ),
                           child: dateWidget,
@@ -561,7 +561,7 @@ class _ChatViewState extends State<ChatView> {
                 child: Icon(
                   Icons.add_box_outlined,
                   size: heightDp * 30,
-                  color: _chatRoomModel!.isBlocked! ? Colors.grey : config.Colors().mainColor(1),
+                  color: _chatRoomModel!.isBlocked! ? Colors.grey : config.AppColors().mainColor(1),
                 ),
               ),
             ),
@@ -627,7 +627,7 @@ class _ChatViewState extends State<ChatView> {
                   size: heightDp * 30,
                   color: _chatRoomModel!.isBlocked! || _controller.text.isEmpty || _chatProvider!.chatState.progressState == 1
                       ? Colors.grey
-                      : config.Colors().mainColor(1),
+                      : config.AppColors().mainColor(1),
                 ),
               ),
             ),
@@ -655,7 +655,7 @@ class _ChatViewState extends State<ChatView> {
               },
               child: Icon(
                 Icons.camera_alt_outlined,
-                color: _chatRoomModel!.isBlocked! ? Colors.grey : config.Colors().mainColor(1),
+                color: _chatRoomModel!.isBlocked! ? Colors.grey : config.AppColors().mainColor(1),
                 size: heightDp * 30,
               ),
             ),

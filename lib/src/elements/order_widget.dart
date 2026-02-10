@@ -442,7 +442,7 @@ class _OrderWidgetState extends State<OrderWidget> {
                         ? Colors.red
                         : isOngoing == 2
                             ? Colors.blue
-                            : config.Colors().mainColor(1),
+                            : config.AppColors().mainColor(1),
                     borderRadius: BorderRadius.only(
                       topRight: Radius.circular(heightDp * 6),
                       bottomRight: Radius.circular(heightDp * 6),

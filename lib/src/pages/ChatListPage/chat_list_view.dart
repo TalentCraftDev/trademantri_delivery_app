@@ -130,7 +130,7 @@ class _ChatListViewState extends State<ChatListView> with SingleTickerProviderSt
             },
             child: NotificationListener<OverscrollIndicatorNotification>(
               onNotification: (overScroll) {
-                overScroll.disallowGlow();
+                overScroll.disallowIndicator();
                 return true;
               },
               child: Container(
@@ -163,7 +163,7 @@ class _ChatListViewState extends State<ChatListView> with SingleTickerProviderSt
   PreferredSizeWidget _appBar() {
     if (!searchBarShow)
       return AppBar(
-        backgroundColor: config.Colors().mainColor(1),
+        backgroundColor: config.AppColors().mainColor(1),
         elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios, size: heightDp * 20, color: Colors.white),
@@ -186,7 +186,7 @@ class _ChatListViewState extends State<ChatListView> with SingleTickerProviderSt
       );
     else
       return AppBar(
-        backgroundColor: config.Colors().mainColor(1),
+        backgroundColor: config.AppColors().mainColor(1),
         elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios, size: heightDp * 20, color: Colors.white),
@@ -212,7 +212,7 @@ class _ChatListViewState extends State<ChatListView> with SingleTickerProviderSt
   Widget _tabBar() {
     return Container(
       decoration: BoxDecoration(
-        color: config.Colors().mainColor(1),
+        color: config.AppColors().mainColor(1),
         boxShadow: [
           BoxShadow(color: Colors.grey.withOpacity(0.5), offset: Offset(0, 2), blurRadius: 4),
         ],
@@ -365,38 +365,42 @@ class _ChatListViewState extends State<ChatListView> with SingleTickerProviderSt
                               children: [
                                 index == 0 ? Divider(color: Colors.grey.withOpacity(0.3), height: heightDp * 1, thickness: 1) : SizedBox(),
                                 Slidable(
-                                  actionPane: SlidableDrawerActionPane(),
-                                  actionExtentRatio: 0.2,
+                                  endActionPane: ActionPane(
+                                    motion: const DrawerMotion(),
+                                    extentRatio: 0.2,
+                                    children: [
+                                      SlidableAction(
+                                        onPressed: (context) {
+                                          _moreHandler(chatRoomModel);
+                                        },
+                                        backgroundColor: Colors.black45,
+                                        foregroundColor: Colors.white,
+                                        icon: Icons.more_horiz,
+                                        label: 'More',
+                                      ),
+                                      SlidableAction(
+                                        onPressed: (context) {
+                                          NormalAskDialog.show(
+                                            context,
+                                            title: "Chat Action",
+                                            content: chatRoomModel.isBlocked! ? "Do you unblock this chat?" : "Do you block this chat?",
+                                            callback: () async {
+                                              _blockHandler(chatRoomModel);
+                                            },
+                                          );
+                                        },
+                                        backgroundColor: Colors.red,
+                                        foregroundColor: Colors.white,
+                                        icon: Icons.delete,
+                                        label: chatRoomModel.isBlocked! ? 'UnBlock' : 'Block',
+                                      ),
+                                    ],
+                                  ),
                                   child: ChatUserWidget(
                                     chatRoomModel: chatRoomModel,
                                     loadingStatus: chatRoomModel == null,
                                     isFirstUser: chatRoomModel.firstUserData!["_id"] != AuthProvider.of(context).authState.deliveryUserModel!.id,
                                   ),
-                                  secondaryActions: <Widget>[
-                                    IconSlideAction(
-                                      caption: 'More',
-                                      color: Colors.black45,
-                                      icon: Icons.more_horiz,
-                                      onTap: () {
-                                        _moreHandler(chatRoomModel);
-                                      },
-                                    ),
-                                    IconSlideAction(
-                                      caption: chatRoomModel.isBlocked! ? 'UnBlock' : 'Block',
-                                      color: Colors.red,
-                                      icon: Icons.delete,
-                                      onTap: () {
-                                        NormalAskDialog.show(
-                                          context,
-                                          title: "Chat Action",
-                                          content: chatRoomModel.isBlocked! ? "Do you unblock this chat?" : "Do you block this chat?",
-                                          callback: () async {
-                                            _blockHandler(chatRoomModel);
-                                          },
-                                        );
-                                      },
-                                    ),
-                                  ],
                                 ),
                                 Divider(color: Colors.grey.withOpacity(0.3), height: heightDp * 1, thickness: 1),
                               ],

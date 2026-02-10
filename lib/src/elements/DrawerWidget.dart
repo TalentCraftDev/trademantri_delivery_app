@@ -24,18 +24,18 @@ class DrawerWidget extends StatelessWidget {
             child: UserAccountsDrawerHeader(
               margin: EdgeInsets.zero,
               decoration: BoxDecoration(
-                color: Theme.of(context).hintColor.withOpacity(0.1),
+                color: Theme.of(context).colorScheme.onSurfaceVariant.withOpacity(0.1),
                 borderRadius: BorderRadius.only(bottomLeft: Radius.circular(35)),
               ),
               accountName: Text(
                 AuthProvider.of(context).authState.deliveryUserModel!.firstName! +
                     " " +
                     AuthProvider.of(context).authState.deliveryUserModel!.lastName!,
-                style: Theme.of(context).textTheme.caption!.copyWith(fontSize: 20, color: Colors.black),
+                style: Theme.of(context).textTheme.bodySmall!.copyWith(fontSize: 20, color: Colors.black),
               ),
               accountEmail: Text(
                 AuthProvider.of(context).authState.deliveryUserModel!.email ?? "",
-                style: Theme.of(context).textTheme.caption!.copyWith(fontSize: 18, color: Colors.black),
+                style: Theme.of(context).textTheme.bodySmall!.copyWith(fontSize: 18, color: Colors.black),
               ),
               currentAccountPicture: AuthProvider.of(context).authState.deliveryUserModel!.id == ""
                   ? Image.asset("img/logo_small.png", height: 150, fit: BoxFit.fitHeight)
@@ -66,11 +66,11 @@ class DrawerWidget extends StatelessWidget {
             },
             leading: Icon(
               Icons.home,
-              color: Theme.of(context).focusColor.withOpacity(1),
+              color: Theme.of(context).colorScheme.primary.withOpacity(1),
             ),
             title: Text(
               "Home",
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
           ListTile(
@@ -84,11 +84,11 @@ class DrawerWidget extends StatelessWidget {
             },
             leading: Icon(
               Icons.dashboard,
-              color: Theme.of(context).focusColor.withOpacity(1),
+              color: Theme.of(context).colorScheme.primary.withOpacity(1),
             ),
             title: Text(
               "Dashboard",
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
           ListTile(
@@ -102,11 +102,11 @@ class DrawerWidget extends StatelessWidget {
             },
             leading: Icon(
               Icons.fastfood,
-              color: Theme.of(context).focusColor.withOpacity(1),
+              color: Theme.of(context).colorScheme.primary.withOpacity(1),
             ),
             title: Text(
               "My deliveries",
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
           ListTile(
@@ -120,11 +120,11 @@ class DrawerWidget extends StatelessWidget {
             },
             leading: Icon(
               Icons.chat,
-              color: Theme.of(context).focusColor.withOpacity(1),
+              color: Theme.of(context).colorScheme.primary.withOpacity(1),
             ),
             title: Text(
               "Chats",
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
           ListTile(
@@ -136,11 +136,11 @@ class DrawerWidget extends StatelessWidget {
             },
             leading: Icon(
               Icons.settings,
-              color: Theme.of(context).focusColor.withOpacity(1),
+              color: Theme.of(context).colorScheme.primary.withOpacity(1),
             ),
             title: Text(
               "Profile",
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
           ListTile(
@@ -152,11 +152,11 @@ class DrawerWidget extends StatelessWidget {
             },
             leading: Icon(
               Icons.notifications,
-              color: Theme.of(context).focusColor.withOpacity(1),
+              color: Theme.of(context).colorScheme.primary.withOpacity(1),
             ),
             title: Text(
               "Notifications",
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
           ListTile(
@@ -173,7 +173,7 @@ class DrawerWidget extends StatelessWidget {
             ),
             title: Text(
               "About us",
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
           ListTile(
@@ -190,7 +190,7 @@ class DrawerWidget extends StatelessWidget {
             ),
             title: Text(
               "Contact us",
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
           ListTile(
@@ -205,7 +205,7 @@ class DrawerWidget extends StatelessWidget {
             ),
             title: Text(
               "Legal Resources",
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
           ListTile(
@@ -236,11 +236,11 @@ class DrawerWidget extends StatelessWidget {
             },
             leading: Icon(
               Icons.exit_to_app,
-              color: Theme.of(context).focusColor.withOpacity(1),
+              color: Theme.of(context).colorScheme.primary.withOpacity(1),
             ),
             title: Text(
               "Log out",
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
           Divider(),

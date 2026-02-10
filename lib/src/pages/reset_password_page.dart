@@ -146,7 +146,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                   child: Container(
                     width: deviceWidth,
                     height: heightDp1 * 250,
-                    decoration: BoxDecoration(color: Theme.of(context).accentColor),
+                    decoration: BoxDecoration(color: Theme.of(context).colorScheme.secondary),
                   ),
                 ),
                 Positioned(
@@ -159,7 +159,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                       SizedBox(height: heightDp1 * 20),
                       Text(
                         "Reset Password",
-                        style: Theme.of(context).textTheme.headline2!.merge(TextStyle(color: Theme.of(context).primaryColor)),
+                        style: Theme.of(context).textTheme.headlineMedium!.merge(TextStyle(color: Theme.of(context).colorScheme.primary)),
                       ),
                       SizedBox(height: heightDp1 * 20),
                       Container(
@@ -167,9 +167,9 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                         margin: EdgeInsets.symmetric(horizontal: widthDp * 20),
                         padding: EdgeInsets.symmetric(vertical: heightDp1 * 30, horizontal: widthDp * 20),
                         decoration: BoxDecoration(
-                          color: Theme.of(context).primaryColor,
+                          color: Theme.of(context).colorScheme.primary,
                           borderRadius: BorderRadius.all(Radius.circular(10)),
-                          boxShadow: [BoxShadow(blurRadius: 50, color: Theme.of(context).hintColor.withOpacity(0.2))],
+                          boxShadow: [BoxShadow(blurRadius: 50, color: Theme.of(context).colorScheme.onSurfaceVariant.withOpacity(0.2))],
                         ),
                         child: Form(
                           key: loginFormKey,
@@ -187,15 +187,15 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                               //   keyboardType: TextInputType.text,
                               //   decoration: InputDecoration(
                               //     labelText: "Old Password",
-                              //     labelStyle: TextStyle(color: Theme.of(context).accentColor),
+                              //     labelStyle: TextStyle(color: Theme.of(context).colorScheme.secondary),
                               //     contentPadding: EdgeInsets.all(12),
                               //     hintText: '••••••••••••',
-                              //     hintStyle: TextStyle(color: Theme.of(context).focusColor.withOpacity(0.7)),
-                              //     prefixIcon: Icon(Icons.lock_outline, color: Theme.of(context).accentColor),
-                              //     // suffixIcon: Icon(Icons.remove_red_eye, color: Theme.of(context).focusColor),
-                              //     border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
-                              //     focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.5))),
-                              //     enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
+                              //     hintStyle: TextStyle(color: Theme.of(context).colorScheme.primary.withOpacity(0.7)),
+                              //     prefixIcon: Icon(Icons.lock_outline, color: Theme.of(context).colorScheme.secondary),
+                              //     // suffixIcon: Icon(Icons.remove_red_eye, color: Theme.of(context).colorScheme.primary),
+                              //     border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
+                              //     focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.5))),
+                              //     enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
                               //   ),
                               // ),
                               // SizedBox(height: 20),
@@ -213,11 +213,11 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                                 keyboardType: TextInputType.text,
                                 decoration: InputDecoration(
                                   labelText: "New Password",
-                                  labelStyle: TextStyle(color: Theme.of(context).accentColor),
+                                  labelStyle: TextStyle(color: Theme.of(context).colorScheme.secondary),
                                   contentPadding: EdgeInsets.all(12),
                                   hintText: '••••••••••••',
-                                  hintStyle: TextStyle(color: Theme.of(context).focusColor.withOpacity(0.7)),
-                                  prefixIcon: Icon(Icons.lock_outline, color: Theme.of(context).accentColor),
+                                  hintStyle: TextStyle(color: Theme.of(context).colorScheme.primary.withOpacity(0.7)),
+                                  prefixIcon: Icon(Icons.lock_outline, color: Theme.of(context).colorScheme.secondary),
                                   suffixIcon: GestureDetector(
                                     onTap: () {
                                       setState(() {
@@ -239,9 +239,9 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                                     maxWidth: heightDp * 20 / 3 * 4 + widthDp * 10,
                                     maxHeight: heightDp * 20,
                                   ),
-                                  border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
-                                  focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.5))),
-                                  enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
+                                  border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
+                                  focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.5))),
+                                  enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
                                 ),
                               ),
                               SizedBox(height: 20),
@@ -259,11 +259,11 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                                 keyboardType: TextInputType.text,
                                 decoration: InputDecoration(
                                   labelText: "Confirm Password",
-                                  labelStyle: TextStyle(color: Theme.of(context).accentColor),
+                                  labelStyle: TextStyle(color: Theme.of(context).colorScheme.secondary),
                                   contentPadding: EdgeInsets.all(12),
                                   hintText: '••••••••••••',
-                                  hintStyle: TextStyle(color: Theme.of(context).focusColor.withOpacity(0.7)),
-                                  prefixIcon: Icon(Icons.lock_outline, color: Theme.of(context).accentColor),
+                                  hintStyle: TextStyle(color: Theme.of(context).colorScheme.primary.withOpacity(0.7)),
+                                  prefixIcon: Icon(Icons.lock_outline, color: Theme.of(context).colorScheme.secondary),
                                   suffixIcon: GestureDetector(
                                     onTap: () {
                                       setState(() {
@@ -285,18 +285,18 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                                     maxWidth: heightDp * 20 / 3 * 4 + widthDp * 10,
                                     maxHeight: heightDp * 20,
                                   ),
-                                  border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
-                                  focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.5))),
-                                  enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
+                                  border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
+                                  focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.5))),
+                                  enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
                                 ),
                               ),
                               SizedBox(height: 30),
                               BlockButtonWidget(
                                 text: Text(
                                   'Login',
-                                  style: TextStyle(color: Theme.of(context).primaryColor),
+                                  style: TextStyle(color: Theme.of(context).colorScheme.primary),
                                 ),
-                                color: Theme.of(context).accentColor,
+                                color: Theme.of(context).colorScheme.secondary,
                                 onPressed: () {
                                   _onLoginButtonPressed();
                                 },

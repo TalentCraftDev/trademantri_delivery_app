@@ -51,7 +51,7 @@ class ErrorDialog {
                       KeicyRaisedButton(
                         width: heightDp * 100,
                         height: heightDp * 40,
-                        color: config.Colors().mainColor(1),
+                        color: config.AppColors().mainColor(1),
                         borderRadius: heightDp * 6,
                         padding: EdgeInsets.symmetric(horizontal: widthDp! * 5),
                         onPressed: () {
@@ -91,7 +91,7 @@ class ErrorDialog {
                         width: heightDp * 100,
                         height: heightDp * 40,
                         borderRadius: heightDp * 6,
-                        color: config.Colors().mainColor(1),
+                        color: config.AppColors().mainColor(1),
                         // borderColor: Colors.grey.withOpacity(0.6),
                         borderWidth: 1,
                         onPressed: () {

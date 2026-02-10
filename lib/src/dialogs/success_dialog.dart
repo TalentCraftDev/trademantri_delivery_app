@@ -49,7 +49,7 @@ class SuccessDialog {
             //   child: KeicyRaisedButton(
             //     width: heightDp * 120,
             //     height: heightDp * 35,
-            //     color: config.Colors().mainColor(1),
+            //     color: config.AppColors().mainColor(1),
             //     borderRadius: heightDp * 6,
             //     child: Text("OK", style: TextStyle(fontSize: fontSp * 16, color: Colors.white)),
             //     onPressed: () {

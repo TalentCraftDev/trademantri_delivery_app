@@ -193,7 +193,7 @@ class _ProductOrderWidgetState extends State<ProductOrderWidget> {
                 ),
                 Text(
                   "${widget.productOrderModel!.couponQuantity}",
-                  style: TextStyle(fontSize: fontSp * 18, color: config.Colors().mainColor(1), fontWeight: FontWeight.w500),
+                  style: TextStyle(fontSize: fontSp * 18, color: config.AppColors().mainColor(1), fontWeight: FontWeight.w500),
                 ),
               ],
             ),
@@ -215,7 +215,7 @@ class _ProductOrderWidgetState extends State<ProductOrderWidget> {
             : widget.productOrderModel!.promocodeDiscount == 0 && widget.productOrderModel!.couponDiscount == 0
                 ? Text(
                     "₹ ${numFormat.format(widget.productOrderModel!.orderPrice! * widget.productOrderModel!.couponQuantity!)}",
-                    style: TextStyle(fontSize: fontSp * 16, color: config.Colors().mainColor(1), fontWeight: FontWeight.w500),
+                    style: TextStyle(fontSize: fontSp * 16, color: config.AppColors().mainColor(1), fontWeight: FontWeight.w500),
                   )
                 : Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
@@ -227,7 +227,7 @@ class _ProductOrderWidgetState extends State<ProductOrderWidget> {
                                   widget.productOrderModel!.promocodeDiscount!) *
                               widget.productOrderModel!.couponQuantity!,
                         )}",
-                        style: TextStyle(fontSize: fontSp * 16, color: config.Colors().mainColor(1), fontWeight: FontWeight.w500),
+                        style: TextStyle(fontSize: fontSp * 16, color: config.AppColors().mainColor(1), fontWeight: FontWeight.w500),
                       ),
                       SizedBox(width: widthDp * 3),
                       Text(

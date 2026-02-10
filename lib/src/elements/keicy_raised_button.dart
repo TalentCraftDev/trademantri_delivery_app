@@ -67,17 +67,19 @@ class KeicyRaisedButton extends StatelessWidget {
         ),
         gradient: gradient,
       ),
-      child: RaisedButton(
-        elevation: elevation,
-        child: loading ? buildSpinner(context) : child,
-        padding: padding,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          elevation: elevation,
+          padding: padding ?? EdgeInsets.zero,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
+          ),
+          backgroundColor: gradient == null ? color : Colors.transparent,
+          disabledBackgroundColor: disabledColor ?? color,
+          foregroundColor: textColor,
         ),
-        color: gradient == null ? color : Colors.transparent,
-        disabledColor: disabledColor ?? color,
-        textColor: textColor,
         onPressed: onPressed,
+        child: loading ? buildSpinner(context) : child,
       ),
     );
   }

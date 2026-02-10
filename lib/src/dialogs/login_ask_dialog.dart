@@ -21,7 +21,7 @@ class LoginAskDialog {
             textAlign: TextAlign.center,
           ),
           actions: [
-            FlatButton(
+            TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
                 Navigator.of(context).push(
@@ -34,7 +34,7 @@ class LoginAskDialog {
                 textAlign: TextAlign.center,
               ),
             ),
-            FlatButton(
+            TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },

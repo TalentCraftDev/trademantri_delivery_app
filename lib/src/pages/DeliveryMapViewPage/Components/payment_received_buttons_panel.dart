@@ -49,7 +49,7 @@ class PaymentReceivedButtonsPanel extends StatelessWidget {
               height: heightDp * 40,
               borderRadius: heightDp * 8,
               padding: EdgeInsets.symmetric(horizontal: widthDp * 5),
-              color: config.Colors().mainColor(1),
+              color: config.AppColors().mainColor(1),
               child: Text(
                 "Payment Received",
                 style: TextStyle(fontSize: fontSp * 16, color: Colors.white),

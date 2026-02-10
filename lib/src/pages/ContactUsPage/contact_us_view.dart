@@ -98,7 +98,7 @@ class _ContactUsViewState extends State<ContactUsView> {
       ),
       body: NotificationListener<OverscrollIndicatorNotification>(
         onNotification: (notification) {
-          notification.disallowGlow();
+          notification.disallowIndicator();
           return true;
         },
         child: SingleChildScrollView(
@@ -159,7 +159,7 @@ class _ContactUsViewState extends State<ContactUsView> {
                         child: KeicyRaisedButton(
                           width: widthDp * 200,
                           height: heightDp * 40,
-                          color: config.Colors().mainColor(1),
+                          color: config.AppColors().mainColor(1),
                           borderRadius: heightDp * 6,
                           child: Text(
                             ContactUsPageString.sendUsRequest,
@@ -247,7 +247,7 @@ class _ContactUsViewState extends State<ContactUsView> {
                       ///
                       Text(
                         ContactUsPageString.adString3,
-                        style: TextStyle(fontSize: fontSp * 55, color: config.Colors().mainColor(1), fontWeight: FontWeight.w900, height: 1),
+                        style: TextStyle(fontSize: fontSp * 55, color: config.AppColors().mainColor(1), fontWeight: FontWeight.w900, height: 1),
                         textAlign: TextAlign.start,
                       ),
 
@@ -344,7 +344,7 @@ class _ContactUsViewState extends State<ContactUsView> {
                                 child: Container(
                                   padding: EdgeInsets.symmetric(horizontal: widthDp * 10, vertical: heightDp * 10),
                                   decoration: BoxDecoration(
-                                    color: phoneValidated! ? config.Colors().mainColor(1) : Colors.grey,
+                                    color: phoneValidated! ? config.AppColors().mainColor(1) : Colors.grey,
                                     borderRadius: BorderRadius.circular(heightDp * 6),
                                   ),
                                   child: Text(

@@ -124,7 +124,7 @@ class _DashboardViewState extends State<DashboardView> {
             ),
       body: NotificationListener<OverscrollIndicatorNotification>(
         onNotification: (notification) {
-          notification.disallowGlow();
+          notification.disallowIndicator();
           return true;
         },
         child: SingleChildScrollView(
@@ -224,7 +224,7 @@ class _DashboardViewState extends State<DashboardView> {
                     KeicyRaisedButton(
                       width: widthDp * 100,
                       height: heightDp * 35,
-                      color: config.Colors().mainColor(1),
+                      color: config.AppColors().mainColor(1),
                       borderRadius: heightDp * 8,
                       child: Text("Show All", style: TextStyle(fontSize: fontSp * 14, color: Colors.white)),
                       onPressed: () async {

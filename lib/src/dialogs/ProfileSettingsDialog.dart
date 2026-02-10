@@ -18,7 +18,7 @@ class _ProfileSettingsDialogState extends State<ProfileSettingsDialog> {
   Widget build(BuildContext context) {
     oldMobile = widget.userModel!.mobile;
 
-    return FlatButton(
+    return TextButton(
       onPressed: () {
         showDialog(
             context: context,
@@ -32,7 +32,7 @@ class _ProfileSettingsDialogState extends State<ProfileSettingsDialog> {
                     SizedBox(width: 10),
                     Text(
                       'Profile Settings',
-                      style: Theme.of(context).textTheme.bodyText1,
+                      style: Theme.of(context).textTheme.bodyLarge,
                     )
                   ],
                 ),
@@ -42,7 +42,7 @@ class _ProfileSettingsDialogState extends State<ProfileSettingsDialog> {
                     child: Column(
                       children: <Widget>[
                         new TextFormField(
-                          style: TextStyle(color: Theme.of(context).hintColor),
+                          style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant),
                           keyboardType: TextInputType.text,
                           decoration: getInputDecoration(hintText: 'John Doe', labelText: 'First Name'),
                           initialValue: widget.userModel!.firstName,
@@ -50,7 +50,7 @@ class _ProfileSettingsDialogState extends State<ProfileSettingsDialog> {
                           onSaved: (input) => widget.userModel!.firstName = input!.trim(),
                         ),
                         new TextFormField(
-                          style: TextStyle(color: Theme.of(context).hintColor),
+                          style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant),
                           keyboardType: TextInputType.text,
                           decoration: getInputDecoration(hintText: 'John Doe', labelText: 'Last Name'),
                           initialValue: widget.userModel!.lastName,
@@ -58,7 +58,7 @@ class _ProfileSettingsDialogState extends State<ProfileSettingsDialog> {
                           onSaved: (input) => widget.userModel!.lastName = input!.trim(),
                         ),
                         new TextFormField(
-                          style: TextStyle(color: Theme.of(context).hintColor),
+                          style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant),
                           keyboardType: TextInputType.number,
                           decoration: getInputDecoration(hintText: '123445', labelText: 'PhoneNumber'),
                           initialValue: widget.userModel!.mobile,
@@ -82,7 +82,7 @@ class _ProfileSettingsDialogState extends State<ProfileSettingsDialog> {
                         onPressed: _submit,
                         child: Text(
                           'Save',
-                          style: TextStyle(color: Theme.of(context).accentColor),
+                          style: TextStyle(color: Theme.of(context).colorScheme.secondary),
                         ),
                       ),
                     ],
@@ -95,7 +95,7 @@ class _ProfileSettingsDialogState extends State<ProfileSettingsDialog> {
       },
       child: Text(
         "Edit",
-        style: Theme.of(context).textTheme.bodyText2,
+        style: Theme.of(context).textTheme.bodyMedium,
       ),
     );
   }
@@ -104,13 +104,13 @@ class _ProfileSettingsDialogState extends State<ProfileSettingsDialog> {
     return new InputDecoration(
       hintText: hintText,
       labelText: labelText,
-      hintStyle: Theme.of(context).textTheme.bodyText2!.merge(
-            TextStyle(color: Theme.of(context).focusColor),
+      hintStyle: Theme.of(context).textTheme.bodyMedium!.merge(
+            TextStyle(color: Theme.of(context).colorScheme.primary),
           ),
-      enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Theme.of(context).hintColor.withOpacity(0.2))),
-      focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Theme.of(context).hintColor)),
-      labelStyle: Theme.of(context).textTheme.bodyText2!.merge(
-            TextStyle(color: Theme.of(context).hintColor),
+      enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.onSurfaceVariant.withOpacity(0.2))),
+      focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.onSurfaceVariant)),
+      labelStyle: Theme.of(context).textTheme.bodyMedium!.merge(
+            TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant),
           ),
     );
   }

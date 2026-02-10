@@ -1,7 +1,9 @@
+import 'dart:ui' show Color;
+
 import 'package:flutter/material.dart';
 
-class Colors {
-//  Color _mainColor = Color(0xFFFF4E6A);
+class AppColors {
+  //  Color _mainColor = Color(0xFFFF4E6A);
   // Color _mainColor = Color(0xFFea5c44);
   Color _mainColor = Color(0xFFf46f2c);
   Color _mainDarkColor = Color(0xFFf46f2c);

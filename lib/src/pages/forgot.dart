@@ -145,7 +145,7 @@ class _ForgotWidgetState extends State<ForgotWidget> {
                   child: Container(
                     width: deviceWidth,
                     height: heightDp1 * 250,
-                    decoration: BoxDecoration(color: Theme.of(context).accentColor),
+                    decoration: BoxDecoration(color: Theme.of(context).colorScheme.secondary),
                   ),
                 ),
                 Positioned(
@@ -158,7 +158,7 @@ class _ForgotWidgetState extends State<ForgotWidget> {
                       SizedBox(height: heightDp1 * 20),
                       Text(
                         "Forgot password ?",
-                        style: Theme.of(context).textTheme.headline2!.merge(TextStyle(color: Theme.of(context).primaryColor)),
+                        style: Theme.of(context).textTheme.headlineMedium!.merge(TextStyle(color: Theme.of(context).colorScheme.primary)),
                       ),
                       SizedBox(height: heightDp1 * 20),
                       Container(
@@ -166,9 +166,9 @@ class _ForgotWidgetState extends State<ForgotWidget> {
                         margin: EdgeInsets.symmetric(horizontal: widthDp * 20),
                         padding: EdgeInsets.symmetric(vertical: heightDp1 * 30, horizontal: widthDp * 20),
                         decoration: BoxDecoration(
-                          color: Theme.of(context).primaryColor,
+                          color: Theme.of(context).colorScheme.primary,
                           borderRadius: BorderRadius.all(Radius.circular(10)),
-                          boxShadow: [BoxShadow(blurRadius: 50, color: Theme.of(context).hintColor.withOpacity(0.2))],
+                          boxShadow: [BoxShadow(blurRadius: 50, color: Theme.of(context).colorScheme.onSurfaceVariant.withOpacity(0.2))],
                         ),
                         child: Form(
                           key: loginFormKey,
@@ -183,27 +183,29 @@ class _ForgotWidgetState extends State<ForgotWidget> {
                                 keyboardType: TextInputType.emailAddress,
                                 decoration: InputDecoration(
                                   labelText: "Email",
-                                  labelStyle: TextStyle(color: Theme.of(context).accentColor),
+                                  labelStyle: TextStyle(color: Theme.of(context).colorScheme.secondary),
                                   contentPadding: EdgeInsets.all(12),
                                   hintText: '',
-                                  hintStyle: TextStyle(color: Theme.of(context).focusColor.withOpacity(0.7)),
-                                  prefixIcon: Icon(Icons.alternate_email, color: Theme.of(context).accentColor),
-                                  border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
-                                  focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.5))),
-                                  enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).focusColor.withOpacity(0.2))),
+                                  hintStyle: TextStyle(color: Theme.of(context).colorScheme.primary.withOpacity(0.7)),
+                                  prefixIcon: Icon(Icons.alternate_email, color: Theme.of(context).colorScheme.secondary),
+                                  border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
+                                  focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.5))),
+                                  enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary.withOpacity(0.2))),
                                 ),
                               ),
                               SizedBox(height: 30),
                               SizedBox(height: 30),
-                              FlatButton(
-                                child: Text(
-                                  "Send OTP",
-                                  style: TextStyle(color: Theme.of(context).primaryColor),
+                              TextButton(
+                                style: TextButton.styleFrom(
+                                  backgroundColor: Theme.of(context).colorScheme.secondary,
                                 ),
-                                color: Theme.of(context).accentColor,
                                 onPressed: () {
                                   _onForgotButtonPressed();
                                 },
+                                child: Text(
+                                  "Send OTP",
+                                  style: TextStyle(color: Theme.of(context).colorScheme.primary),
+                                ),
                               ),
                               SizedBox(height: 25),
                             ],
